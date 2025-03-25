@@ -31,7 +31,7 @@
 
         <div class="input-row">
             <label>Daily Rental Cost:</label>
-            <input type="number" step="0.01" @bind="DailyRentalCost" />
+            <input type="number" step="5" @bind="DailyRentalCost" />
         </div>
 
         <div class="input-row">
@@ -53,7 +53,6 @@
     <div class="form-right">
         <label class="notes-label">Notes:</label>
         <textarea @bind="Notes" class="notes-box"></textarea>
-        <button class="button">Edit Notes</button>
     </div>
 </div>
 
@@ -61,6 +60,12 @@
     <button class="button" @onclick="SaveEquipment">Save Changes</button>
     <button class="button" @onclick="GoBack">Back To Home</button>
 </div>
+
+@if (showSuccess)
+{
+    <p class="text-success">✅ Equipment saved!</p>
+}
+
 
 @code {
     private int EquipmentID = new Random().Next(1000, 9999);
@@ -72,6 +77,8 @@
     private string Condition = "New";
     private string Location = "Storage";
     private string Notes;
+    private bool showSuccess = false;
+
 
     private List<Category> CategoryList = new();
 
@@ -86,13 +93,24 @@
         }
     }
 
-    private void SaveEquipment()
-    {
-        // save logic
-    }
-
     private void GoBack()
     {
         NavigationManager.NavigateTo("/");
     }
+
+    private void SaveEquipment()
+    {
+        var newEquipment = new Equipment($"{EquipmentID},{SelectedCategoryID},{EquipmentName},{Description},{Status},{Condition},{Location},{DailyRentalCost},{Notes}");
+        EquipmentManager.AddEquipment(newEquipment);
+
+        // Optional: clear form or show success
+        EquipmentID = new Random().Next(1000, 9999);
+        EquipmentName = "";
+        Description = "";
+        DailyRentalCost = 0;
+        Notes = "";
+        showSuccess = true;
+
+    }
+
 }

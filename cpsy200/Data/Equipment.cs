@@ -16,11 +16,13 @@ namespace cpsy200.Data
         public string Condition { get; set; }
         public string Location { get; set; }
         public decimal DailyRentalCost { get; set; }
+        public string Notes { get; set; }  
 
         public Equipment(string dataLine)
         {
-            // Assuming CSV format: ID,CategoryID,Name,Description,Status,Condition,Location,DailyRentalCost
+            // Now expecting: ID,CategoryID,Name,Description,Status,Condition,Location,DailyRentalCost,Notes
             string[] parts = dataLine.Split(',');
+
             EquipmentID = int.Parse(parts[0]);
             CategoryID = int.Parse(parts[1]);
             EquipmentName = parts[2];
@@ -29,11 +31,16 @@ namespace cpsy200.Data
             Condition = parts[5];
             Location = parts[6];
             DailyRentalCost = decimal.Parse(parts[7]);
+            Notes = parts.Length > 8 ? parts[8] : "";
+
         }
 
         public override string ToString()
         {
-            return $"{EquipmentID}: {EquipmentName} ({Status}) - ${DailyRentalCost}/day";
+            // Wrap Notes in quotes and escape any quotes inside the note
+            return $"{EquipmentID},{CategoryID},{EquipmentName},{Description},{Status},{Condition},{Location},{DailyRentalCost},{Notes}";
         }
+
+
     }
 }

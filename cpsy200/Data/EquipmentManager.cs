@@ -12,37 +12,47 @@ namespace cpsy200.Data
         private static string filePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory,
                 @"..\..\..\..\Resources\Res\equipment_list.csv");
 
-        public static List<Equipment> GetEquipmentList()
+        public static List<Equipment> Equipments = new List<Equipment>();
+
+        static EquipmentManager()
         {
-            List<Equipment> equipmentList = new List<Equipment>();
+            LoadEquipments();
+        }
 
-            if (!File.Exists(filePath))
-                return equipmentList;
+        public static void LoadEquipments()
+        {
+            Equipments.Clear();
+            if (!File.Exists(filePath)) return;
 
-            using var fs = new FileStream(filePath, FileMode.OpenOrCreate, FileAccess.Read);
-            using var sr = new StreamReader(fs);
-
+            using FileStream fs = new FileStream(filePath, FileMode.OpenOrCreate, FileAccess.Read);
+            using StreamReader sr = new StreamReader(fs);
             string line;
+
             while (!sr.EndOfStream)
             {
                 line = sr.ReadLine()!;
                 if (!string.IsNullOrWhiteSpace(line))
                 {
-                    Equipment equipment = new Equipment(line);
-                    equipmentList.Add(equipment);
+                    Equipments.Add(new Equipment(line));
                 }
             }
-
-            return equipmentList.OrderBy(e => e.EquipmentName).ToList();
         }
 
-        public static void SaveEquipmentList(List<Equipment> list)
+        public static void AddEquipment(Equipment equipment)
         {
-            using var sw = new StreamWriter(filePath, false);
-            foreach (var item in list)
+            Equipments.Add(equipment);
+            SaveEquipments();
+        }
+
+        public static void SaveEquipments()
+        {
+            using StreamWriter sw = new StreamWriter(filePath, false);
+            foreach (var equipment in Equipments)
             {
-                sw.WriteLine($"{item.EquipmentID},{item.CategoryID},{item.EquipmentName},{item.Description},{item.Status},{item.Condition},{item.Location},{item.DailyRentalCost}");
+                sw.WriteLine(equipment.ToString()); 
             }
         }
+
+        public static List<Equipment> GetAll() => Equipments;
     }
 }
