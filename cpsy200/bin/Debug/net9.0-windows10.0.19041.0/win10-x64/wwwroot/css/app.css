@@ -190,3 +190,16 @@ h1:focus {
     cursor: pointer;
     border-radius: 5px;
 }
+
+/*search equpiment*/
+.group-label {
+    font-weight: bold;
+    margin-bottom: 6px;
+    display: block;
+}
+
+input[disabled] {
+    color: black;
+    border: 1px solid #ccc;
+    opacity: 1; /* remove faded look */
+}

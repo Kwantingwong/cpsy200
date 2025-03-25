@@ -1,0 +1,113 @@
+﻿@page "/search-equipment"
+
+<h2 class="form-title">Search Equipment</h2>
+
+<div class="form-wrapper">
+    <div class="form-left">
+        <div class="input-row">
+            <label>Enter Criteria:</label>
+            <input type="text" @bind="SearchKeyword" />
+        </div>
+
+        <div class="input-row">
+            <label>Equipment ID:</label>
+            <input type="text" @bind="SearchEquipmentID" disabled />
+        </div>
+
+        <div class="input-row">
+            <label>Equipment Name:</label>
+            <input type="text" @bind="SearchName" disabled />
+        </div>
+
+        <div class="input-row">
+            <label>Category:</label>
+            <input type="text" @bind="SearchCategory" disabled />
+        </div>
+
+        <div class="input-row">
+            <label>Status:</label>
+            <input type="text" @bind="SearchStatus" disabled />
+        </div>
+
+        <div class="input-row">
+            <label>Condition:</label>
+            <input type="text" @bind="SearchCondition" disabled />
+        </div>
+
+        <div class="input-row">
+            <label>Location:</label>
+            <input type="text" @bind="SearchLocation" disabled />
+        </div>
+
+    </div>
+
+    <div class="form-right">
+        <label class="notes-label">Notes:</label>
+        <textarea class="notes-box" @bind="SearchNotes" disabled></textarea>
+    </div>
+</div>
+
+<div class="form-buttons">
+    <button class="button" @onclick="UpdateEquipment">View Equipment</button>
+    <button class="button" @onclick="ClearFields">Clear Fields</button>
+    <button class="button" @onclick="GoBack">Back To Home</button>
+</div>
+
+@code {
+    private string SearchKeyword;
+    private string SearchEquipmentID;
+    private string SearchName;
+    private string SearchCategory;
+    private string SearchNotes;
+
+    private string SearchStatus;
+    private string SearchCondition;
+    private string SearchLocation;
+
+
+    [Inject] private NavigationManager NavigationManager { get; set; }
+
+    private void UpdateEquipment()
+    {
+        if (!string.IsNullOrWhiteSpace(SearchKeyword))
+        {
+            var equipment = EquipmentManager.Equipments.FirstOrDefault(e =>
+                e.EquipmentID.ToString().Contains(SearchKeyword, StringComparison.OrdinalIgnoreCase) ||
+                e.EquipmentName.Contains(SearchKeyword, StringComparison.OrdinalIgnoreCase) ||
+                e.Description.Contains(SearchKeyword, StringComparison.OrdinalIgnoreCase) ||
+                e.Notes.Contains(SearchKeyword, StringComparison.OrdinalIgnoreCase));
+
+            if (equipment != null)
+            {
+                SearchEquipmentID = equipment.EquipmentID.ToString();
+                SearchName = equipment.EquipmentName;
+                SearchCategory = equipment.CategoryID.ToString(); // or fetch actual category name if needed
+                SearchNotes = equipment.Notes;
+                SearchStatus = equipment.Status;
+                SearchCondition = equipment.Condition;
+                SearchLocation = equipment.Location;
+
+            }
+            else
+            {
+                ClearFields();
+            }
+        }
+    }
+
+    private void ClearFields()
+    {
+        SearchEquipmentID = string.Empty;
+        SearchName = string.Empty;
+        SearchCategory = string.Empty;
+        SearchNotes = string.Empty;
+        SearchStatus = string.Empty;
+        SearchCondition = string.Empty;
+        SearchLocation = string.Empty;
+    }
+
+    private void GoBack()
+    {
+        NavigationManager.NavigateTo("/");
+    }
+}
