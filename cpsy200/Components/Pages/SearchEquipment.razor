@@ -6,7 +6,14 @@
     <div class="form-left">
         <div class="input-row">
             <label>Enter Criteria:</label>
-            <input type="text" @bind="SearchKeyword" />
+            <input type="text" list="equipmentList" @bind="SearchKeyword" />
+
+            <datalist id="equipmentList">
+                @foreach (var equipment in EquipmentManager.Equipments)
+                {
+                    <option value="@equipment.EquipmentName">@($"{equipment.EquipmentID} - {equipment.EquipmentName}")</option>
+                }
+            </datalist>
         </div>
 
         <div class="input-row">
@@ -50,6 +57,7 @@
 <div class="form-buttons">
     <button class="button" @onclick="UpdateEquipment">View Equipment</button>
     <button class="button" @onclick="ClearFields">Clear Fields</button>
+    <button class="button" @onclick="ModifyEquipment" disabled="@string.IsNullOrEmpty(SearchEquipmentID)">Modify Equipment</button>
     <button class="button" @onclick="GoBack">Back To Home</button>
 </div>
 
@@ -110,4 +118,13 @@
     {
         NavigationManager.NavigateTo("/");
     }
+
+    private void ModifyEquipment()
+    {
+        if (!string.IsNullOrEmpty(SearchEquipmentID))
+        {
+            NavigationManager.NavigateTo($"/modify-equipment/{SearchEquipmentID}");
+        }
+    }
+
 }

@@ -1,5 +1,103 @@
-﻿<h3>ModifyEquipment</h3>
+﻿@page "/modify-equipment/{EquipmentID:int}"
+
+<h2 class="form-title">Modify Equipment</h2>
+
+<div class="form-wrapper">
+    <div class="form-left">
+        <div class="input-row">
+            <label>Equipment ID:</label>
+            <input type="text" @bind="EquipmentIDText" disabled />
+        </div>
+
+       <label>Update Any of the Following:</label>
+
+        <div class="input-row">
+            <label>Equipment Name:</label>
+            <input type="text" @bind="EquipmentName" />
+        </div>
+
+        <div class="input-row">
+            <label>Description:</label>
+            <input type="text" @bind="Description" />
+        </div>
+
+        <div class="input-row">
+            <label>Daily Rental Cost:</label>
+            <input type="number" @bind="DailyRentalCost" step="5" />
+        </div>
+    </div>
+
+    <div class="form-right">
+        <label>Notes:</label>
+        <textarea class="notes-box" @bind="Notes"></textarea>
+    </div>
+</div>
+
+<div class="form-buttons">
+    <button class="button" @onclick="SaveChanges">Save Changes</button>
+    <button class="button" @onclick="GoBack">Back To Home</button>
+</div>
+
+@if (showSuccess)
+{
+    <p class="text-success">✅ Equipment saved!</p>
+}
 
 @code {
+    [Parameter]
+    public int EquipmentID { get; set; }
 
+    private string EquipmentIDText;
+    private string EquipmentName;
+    private string Description;
+    private decimal DailyRentalCost;
+    private string Notes;
+
+    private bool showSuccess = false;
+
+
+    [Inject] private NavigationManager NavigationManager { get; set; }
+
+    protected override void OnInitialized()
+    {
+        var equipment = EquipmentManager.Equipments.FirstOrDefault(e => e.EquipmentID == EquipmentID);
+
+        if (equipment != null)
+        {
+            EquipmentIDText = equipment.EquipmentID.ToString();
+            EquipmentName = equipment.EquipmentName;
+            Description = equipment.Description;
+            DailyRentalCost = equipment.DailyRentalCost;
+            Notes = equipment.Notes;
+        }
+        else
+        {
+            // Handle not found (optional)
+            NavigationManager.NavigateTo("/");
+        }
+    }
+
+    private void SaveChanges()
+    {
+        var equipment = EquipmentManager.Equipments.FirstOrDefault(e => e.EquipmentID == EquipmentID);
+
+        if (equipment != null)
+        {
+            equipment.EquipmentName = EquipmentName;
+            equipment.Description = Description;
+            equipment.DailyRentalCost = DailyRentalCost;
+            equipment.Notes = Notes;
+
+            // Optionally re-save to file here
+            EquipmentManager.SaveEquipments();
+            showSuccess = true;
+
+            
+        }
+    }
+
+    private void GoBack()
+    {
+        NavigationManager.NavigateTo("/");
+    }
 }
