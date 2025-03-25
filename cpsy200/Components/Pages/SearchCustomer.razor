@@ -1,0 +1,134 @@
+﻿@page "/search-customer"
+
+<h2 class="form-title">Search Customer</h2>
+
+<div class="form-wrapper">
+    <div class="form-left">
+        <div class="input-row">
+            <label>Enter Criteria:</label>
+             <input type="text" list="customerList" @bind="SearchKeyword" />
+
+    <datalist id="customerList">
+                @foreach (var customer in CustomerManager.Customers)
+                {
+                <option value="@customer.Name">@($"{customer.CustomerID} - {customer.Name}")</option>
+                }
+    </datalist>
+        </div>
+
+        <div class="input-row">
+            <label>Customer ID:</label>
+            <input type="text" @bind="CustomerIDText" disabled />
+        </div>
+
+        <div class="input-row">
+            <label>Full Name:</label>
+            <input type="text" @bind="Name" disabled />
+        </div>
+
+        <div class="input-row">
+            <label>Email:</label>
+            <input type="text" @bind="Email" disabled />
+        </div>
+
+        <div class="input-row">
+            <label>Phone:</label>
+            <input type="text" @bind="Phone" disabled />
+        </div>
+
+        <div class="input-row">
+            <label>Address:</label>
+            <input type="text" @bind="Address" disabled />
+        </div>
+
+        <div class="input-row">
+            <label>Status:</label>
+            <input type="text" @bind="Status" disabled />
+        </div>
+
+        <div class="input-row">
+            <label>Personal Discount:</label>
+            <input type="text" @bind="PersonalDiscountText" disabled />
+        </div>
+
+    </div>
+
+    <div class="form-right">
+        <label>Notes:</label>
+        <textarea @bind="Notes" class="notes-box" disabled></textarea>
+    </div>
+</div>
+
+<div class="form-buttons">
+    <button class="button" @onclick="Update">View Customer</button>
+    <button class="button" @onclick="ClearFields">Clear Fields</button>
+    <button class="button" @onclick="ModifyCustomer" disabled="@string.IsNullOrEmpty(CustomerIDText)">Modify Customer</button>
+
+    <button class="button" @onclick="GoBack">Back To Home</button>
+</div>
+
+@code {
+    private string SearchKeyword;
+    private string CustomerIDText;
+    private string Name;
+    private string Email;
+    private string Phone;
+    private string Address;
+    private string Status;
+    private string PersonalDiscountText;
+    private string Notes;
+
+    [Inject] private NavigationManager NavigationManager { get; set; }
+
+    private void Update()
+    {
+        var customer = CustomerManager.Customers.FirstOrDefault(c =>
+            c.CustomerID.ToString().Contains(SearchKeyword, StringComparison.OrdinalIgnoreCase) ||
+            c.Name.Contains(SearchKeyword, StringComparison.OrdinalIgnoreCase) ||
+            c.Email.Contains(SearchKeyword, StringComparison.OrdinalIgnoreCase) ||
+            c.Phone.Contains(SearchKeyword, StringComparison.OrdinalIgnoreCase) ||
+            c.Address.Contains(SearchKeyword, StringComparison.OrdinalIgnoreCase));
+
+        if (customer != null)
+        {
+            CustomerIDText = customer.CustomerID.ToString();
+            Name = customer.Name;
+            Email = customer.Email;
+            Phone = customer.Phone;
+            Address = customer.Address;
+            Status = customer.Status;
+            PersonalDiscountText = customer.PersonalDiscount.ToString();
+            Notes = customer.Notes;
+        }
+        else
+        {
+            ClearFields();
+        }
+    }
+
+    private void ClearFields()
+    {
+        CustomerIDText = "";
+        Name = "";
+        Email = "";
+        Phone = "";
+        Address = "";
+        Status = "";
+        PersonalDiscountText = "";
+        Notes = "";
+    }
+
+    private void GoBack()
+    {
+        NavigationManager.NavigateTo("/");
+    }
+
+    private void ModifyCustomer()
+    {
+        if (!string.IsNullOrEmpty(CustomerIDText))
+        {
+            NavigationManager.NavigateTo($"/modify-customer/{CustomerIDText}");
+        }
+    }
+
+}

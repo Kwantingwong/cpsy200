@@ -40,7 +40,7 @@
 
 @if (showSuccess)
 {
-    <p class="text-success">✅ Equipment saved!</p>
+        <p class="text-success">✅ Equipment saved!</p>
 }
 
 @code {
@@ -54,7 +54,6 @@
     private string Notes;
 
     private bool showSuccess = false;
-
 
     [Inject] private NavigationManager NavigationManager { get; set; }
 
@@ -91,8 +90,6 @@
             // Optionally re-save to file here
             EquipmentManager.SaveEquipments();
             showSuccess = true;
-
-            
         }
     }
 
@@ -100,4 +97,6 @@
     {
         NavigationManager.NavigateTo("/");
     }
+
+
 }

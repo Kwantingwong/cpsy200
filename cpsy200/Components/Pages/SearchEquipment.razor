@@ -11,7 +11,7 @@
             <datalist id="equipmentList">
                 @foreach (var equipment in EquipmentManager.Equipments)
                 {
-                    <option value="@equipment.EquipmentName">@($"{equipment.EquipmentID} - {equipment.EquipmentName}")</option>
+                        <option value="@equipment.EquipmentName">@($"{equipment.EquipmentID} - {equipment.EquipmentName}")</option>
                 }
             </datalist>
         </div>
@@ -45,7 +45,6 @@
             <label>Location:</label>
             <input type="text" @bind="SearchLocation" disabled />
         </div>
-
     </div>
 
     <div class="form-right">
@@ -54,11 +53,17 @@
     </div>
 </div>
 
+<!-- Form buttons -->
 <div class="form-buttons">
     <button class="button" @onclick="UpdateEquipment">View Equipment</button>
     <button class="button" @onclick="ClearFields">Clear Fields</button>
-    <button class="button" @onclick="ModifyEquipment" disabled="@string.IsNullOrEmpty(SearchEquipmentID)">Modify Equipment</button>
     <button class="button" @onclick="GoBack">Back To Home</button>
+</div>
+
+<!-- Modify and Remove buttons below -->
+<div class="form-buttons">
+    <button class="button" @onclick="ModifyEquipment" disabled="@string.IsNullOrEmpty(SearchEquipmentID)">Modify Equipment</button>
+    <button class="button" @onclick="GoToRemoveEquipmentPage" disabled="@string.IsNullOrEmpty(SearchEquipmentID)">Remove Equipment</button>
 </div>
 
 @code {
@@ -71,7 +76,6 @@
     private string SearchStatus;
     private string SearchCondition;
     private string SearchLocation;
-
 
     [Inject] private NavigationManager NavigationManager { get; set; }
 
@@ -94,7 +98,6 @@
                 SearchStatus = equipment.Status;
                 SearchCondition = equipment.Condition;
                 SearchLocation = equipment.Location;
-
             }
             else
             {
@@ -123,8 +126,17 @@
     {
         if (!string.IsNullOrEmpty(SearchEquipmentID))
         {
+            // Navigate to the Modify Equipment page with the selected EquipmentID
             NavigationManager.NavigateTo($"/modify-equipment/{SearchEquipmentID}");
         }
     }
 
+    private void GoToRemoveEquipmentPage()
+    {
+        if (!string.IsNullOrEmpty(SearchEquipmentID))
+        {
+            // Navigate to the Remove Equipment page with the selected EquipmentID
+            NavigationManager.NavigateTo($"/remove-equipment/{SearchEquipmentID}");
+        }
+    }
 }

@@ -1,0 +1,123 @@
+﻿@page "/modify-customer/{CustomerID:int}"
+
+<h2 class="form-title">Modify Customer</h2>
+
+<div class="form-wrapper">
+    <div class="form-left">
+        <div class="input-row">
+            <label>Customer ID:</label>
+            <input type="text" @bind="CustomerIDText" disabled />
+        </div>
+
+        <div class="input-row">
+            <label>Full Name:</label>
+            <input type="text" @bind="Name" />
+        </div>
+
+        <div class="input-row">
+            <label>Email:</label>
+            <input type="text" @bind="Email" />
+        </div>
+
+        <div class="input-row">
+            <label>Phone:</label>
+            <input type="text" @bind="Phone" />
+        </div>
+
+        <div class="input-row">
+            <label>Address:</label>
+            <input type="text" @bind="Address" />
+        </div>
+
+        <div class="input-row">
+            <label>Status:</label>
+            <select @bind="Status">
+                <option value="Active">Active</option>
+                <option value="Banned">Banned</option>
+            </select>
+        </div>
+
+        <div class="input-row">
+            <label>Personal Discount (%):</label>
+            <input type="number" step="1" min="0" max="100" @bind="PersonalDiscount" />
+        </div>
+
+    </div>
+
+    <div class="form-right">
+        <label>Notes:</label>
+        <textarea @bind="Notes" class="notes-box"></textarea>
+    </div>
+</div>
+
+<div class="form-buttons">
+    <button class="button" @onclick="SaveChanges">Save Changes</button>
+    <button class="button" @onclick="GoBack">Back To Home</button>
+</div>
+
+@if (showSuccess)
+{
+    <p class="text-success">✅ Customer updated!</p>
+}
+
+@code {
+    [Parameter]
+    public int CustomerID { get; set; }
+
+    private string CustomerIDText;
+    private string Name;
+    private string Email;
+    private string Phone;
+    private string Address;
+    private string Status;
+    private int PersonalDiscount;
+    private string Notes;
+    private bool showSuccess = false;
+
+    [Inject] private NavigationManager NavigationManager { get; set; }
+
+    protected override void OnInitialized()
+    {
+        var customer = CustomerManager.Customers.FirstOrDefault(c => c.CustomerID == CustomerID);
+
+        if (customer != null)
+        {
+            CustomerIDText = customer.CustomerID.ToString();
+            Name = customer.Name;
+            Email = customer.Email;
+            Phone = customer.Phone;
+            Address = customer.Address;
+            Status = customer.Status;
+            PersonalDiscount = customer.PersonalDiscount;
+            Notes = customer.Notes;
+        }
+        else
+        {
+            NavigationManager.NavigateTo("/search-customer");
+        }
+    }
+
+    private void SaveChanges()
+    {
+        var customer = CustomerManager.Customers.FirstOrDefault(c => c.CustomerID == CustomerID);
+
+        if (customer != null)
+        {
+            customer.Name = Name;
+            customer.Email = Email;
+            customer.Phone = Phone;
+            customer.Address = Address;
+            customer.Status = Status;
+            customer.PersonalDiscount = PersonalDiscount;
+            customer.Notes = Notes;
+
+            CustomerManager.SaveCustomers();
+            showSuccess = true;
+        }
+    }
+
+    private void GoBack()
+    {
+        NavigationManager.NavigateTo("/");
+    }
+}

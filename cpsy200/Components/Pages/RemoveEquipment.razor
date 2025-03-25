@@ -1,0 +1,127 @@
+﻿@page "/remove-equipment/{EquipmentID:int}"
+
+<h2 class="form-title">Remove Equipment</h2>
+
+<div class="form-wrapper">
+    <div class="form-left">
+        <div class="input-row">
+            <label>Equipment ID:</label>
+            <input type="text" @bind="EquipmentIDText" disabled />
+        </div>
+
+        <label>Update Any of the Following:</label>
+
+        <!-- Status Section -->
+        <div class="input-row">
+            <label>Status:</label>
+            <div>
+                <label><input type="checkbox" @bind="IsRemovedForParts" /> Removed - For Parts</label>
+                <label><input type="checkbox" @bind="IsRemovedForSale" /> Removed - For Sale</label>
+            </div>
+        </div>
+
+        <!-- Condition Section -->
+        <div class="input-row">
+            <label>Condition:</label>
+            <div>
+                <label><input type="checkbox" @bind="IsNew" /> New</label>
+                <label><input type="checkbox" @bind="IsUsed" /> Used</label>
+                <label><input type="checkbox" @bind="IsDamaged" /> Damaged</label>
+            </div>
+        </div>
+
+        <!-- Location Section -->
+        <div class="input-row">
+            <label>Location:</label>
+            <div>
+                <label><input type="checkbox" @bind="IsInSellingArea" /> Selling Area</label>
+                <label><input type="checkbox" @bind="IsInStorage" /> Storage</label>
+                <label><input type="checkbox" @bind="IsInScrapArea" /> Scrap Area</label>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-right">
+        <label>Notes:</label>
+        <textarea class="notes-box" @bind="Notes"></textarea>
+    </div>
+</div>
+
+<div class="form-buttons">
+    <button class="button" @onclick="RemoveEquipmentAction">Remove Equipment</button>
+    <button class="button" @onclick="GoBack">Back To Home</button>
+</div>
+
+@code {
+    [Parameter]
+    public int EquipmentID { get; set; }  // Declare EquipmentID as a parameter
+
+    private string EquipmentIDText;
+    private bool IsRemovedForParts { get; set; }
+    private bool IsRemovedForSale { get; set; }
+    private bool IsNew { get; set; }
+    private bool IsUsed { get; set; }
+    private bool IsDamaged { get; set; }
+    private bool IsInSellingArea { get; set; }
+    private bool IsInStorage { get; set; }
+    private bool IsInScrapArea { get; set; }
+    private string Notes { get; set; }
+
+    [Inject] private NavigationManager NavigationManager { get; set; }
+
+    // On page initialization, fetch the equipment based on EquipmentID
+    protected override void OnInitialized()
+    {
+        var equipment = EquipmentManager.Equipments.FirstOrDefault(e => e.EquipmentID == EquipmentID);
+
+        if (equipment != null)
+        {
+            EquipmentIDText = equipment.EquipmentID.ToString();
+            Notes = equipment.Notes;
+
+            // Set the initial values for the checkboxes based on current equipment status
+            IsRemovedForParts = equipment.Status.Contains("For Parts");
+            IsRemovedForSale = equipment.Status.Contains("For Sale");
+
+            // Set the equipment condition
+            IsNew = equipment.Condition == "New";
+            IsUsed = equipment.Condition == "Used";
+            IsDamaged = equipment.Condition == "Damaged";
+
+            // Set the equipment location
+            IsInSellingArea = equipment.Location == "Selling Area";
+            IsInStorage = equipment.Location == "Storage";
+            IsInScrapArea = equipment.Location == "Scrap Area";
+        }
+        else
+        {
+            NavigationManager.NavigateTo("/"); // Redirect to home if equipment is not found
+        }
+    }
+
+    private void RemoveEquipmentAction()
+    {
+        // Find the equipment from the EquipmentManager based on EquipmentID
+        var equipment = EquipmentManager.Equipments.FirstOrDefault(e => e.EquipmentID == EquipmentID);
+
+        if (equipment != null)
+        {
+            // Update the equipment status, condition, location, and notes based on user input
+            equipment.Status = (IsRemovedForParts ? "Removed - For Parts" : "") + (IsRemovedForSale ? " Removed - For Sale" : "");
+            equipment.Condition = IsNew ? "New" : IsUsed ? "Used" : IsDamaged ? "Damaged" : equipment.Condition;
+            equipment.Location = IsInSellingArea ? "Selling Area" : IsInStorage ? "Storage" : IsInScrapArea ? "Scrap Area" : equipment.Location;
+            equipment.Notes = Notes;
+
+            // Save changes to the equipment data
+            EquipmentManager.SaveEquipments();
+
+            // Navigate back to home after saving
+            NavigationManager.NavigateTo("/");  // Redirect to home page after removing equipment
+        }
+    }
+
+    private void GoBack()
+    {
+        NavigationManager.NavigateTo("/"); // Go back to home or previous page
+    }
+}

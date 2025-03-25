@@ -1,0 +1,99 @@
+﻿@page "/add-customer"
+
+<h2 class="form-title">Add Customer</h2>
+
+<div class="form-wrapper">
+    <div class="form-left">
+        <div class="input-row">
+            <label>Generated ID:</label>
+            <input type="text" @bind="CustomerID" disabled />
+        </div>
+
+        <div class="input-row">
+            <label>Full Name:</label>
+            <input type="text" @bind="Name" />
+        </div>
+
+        <div class="input-row">
+            <label>Email:</label>
+            <input type="email" @bind="Email" />
+        </div>
+
+        <div class="input-row">
+            <label>Phone:</label>
+            <input type="tel" @bind="Phone" />
+        </div>
+
+        <div class="input-row">
+            <label>Address:</label>
+            <input type="text" @bind="Address" />
+        </div>
+
+        <div class="input-row">
+            <label>Status:</label>
+            <select @bind="Status">
+                <option value="Active">Active</option>
+                <option value="Banned">Banned</option>
+            </select>
+        </div>
+
+        <div class="input-row">
+            <label>Personal Discount (%):</label>
+            <input type="number" step="1" min="0" max="100" @bind="PersonalDiscount" />
+        </div>
+
+    </div>
+
+    <div class="form-right">
+        <label class="notes-label">Notes:</label>
+        <textarea @bind="Notes" class="notes-box"></textarea>
+    </div>
+</div>
+
+<div class="form-buttons">
+    <button class="button" @onclick="SaveCustomer">Save Customer</button>
+    <button class="button" @onclick="GoBack">Back To Home</button>
+</div>
+
+@if (showSuccess)
+{
+        <p class="text-success">✅ Customer saved!</p>
+}
+
+@code {
+    private int CustomerID = new Random().Next(2000, 9999);
+    private string Name;
+    private string Email;
+    private string Phone;
+    private string Address;
+    private string Status = "Active";
+    private int PersonalDiscount = 0;
+    private string Notes;
+
+
+    private bool showSuccess = false;
+
+    [Inject] private NavigationManager NavigationManager { get; set; }
+
+    private void GoBack()
+    {
+        NavigationManager.NavigateTo("/");
+    }
+
+    private void SaveCustomer()
+    {
+        var line = $"{CustomerID},{Name},{Email},{Phone},{Address},{Status},{PersonalDiscount},{Notes}";
+        var customer = new Customer(line);
+        CustomerManager.AddCustomer(customer);
+
+        // Reset form
+        CustomerID = new Random().Next(2000, 9999);
+        Name = "";
+        Email = "";
+        Phone = "";
+        Address = "";
+        Status = "Active";
+        PersonalDiscount = 0;
+        showSuccess = true;
+    }
+}
