@@ -1,0 +1,8 @@
+C:\Joy_Sem2\software_analysis\final_proj\github\cpsy200\cpsy200\wwwroot\index.html
+C:\Joy_Sem2\software_analysis\final_proj\github\cpsy200\cpsy200\wwwroot\css\app.css
+C:\Joy_Sem2\software_analysis\final_proj\github\cpsy200\cpsy200\wwwroot\css\bootstrap\bootstrap.min.css
+C:\Joy_Sem2\software_analysis\final_proj\github\cpsy200\cpsy200\wwwroot\css\bootstrap\bootstrap.min.css.map
+wwwroot\css\app.css
+wwwroot\css\bootstrap\bootstrap.min.css
+wwwroot\css\bootstrap\bootstrap.min.css.map
+wwwroot\index.html

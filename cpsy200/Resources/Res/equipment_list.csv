@@ -1,0 +1,4 @@
+EquipmentID,CategoryID,EquipmentName,Description,Status,Condition,Location,DailyRentalCost,IsBanned
+1001,1,Drill Machine,"Electric drill, 500W",Available,New,Storage,15,0
+1002,2,Lawn Mower,Petrol lawn mower,Rented,Used - Working,In Use,25,0
+1003,1,Power Washer,High pressure washer,For Sale,Used - Working,Selling Area,30,1

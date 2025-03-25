@@ -1,0 +1,4 @@
+CustomerID,Name,Email,Phone,Address,Status,PersonalDiscount
+2001,Alice Smith,alice@example.com,123-456-7890,123 Elm St,Active,10
+2002,Bob Johnson,bob@example.com,987-654-3210,456 Oak Ave,Banned,0
+2003,Charlie Lee,charlie@example.com,555-123-4567,789 Pine Rd,Active,5
