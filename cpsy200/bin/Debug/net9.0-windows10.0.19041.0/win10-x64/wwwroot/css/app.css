@@ -105,3 +105,88 @@ h1:focus {
     .menu-button:hover {
         background-color: darkgray;
     }
+
+/*addequipment*/
+
+.form-title {
+    background-color: lightgray;
+    text-align: center;
+    padding: 10px;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.form-wrapper {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 20px;
+}
+
+.form-left {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.form-right {
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.input-row {
+    display: flex;
+    justify-content: space-between;
+    background-color: lightgray;
+    padding: 10px;
+    align-items: center;
+    border-radius: 5px;
+}
+
+    .input-row label {
+        width: 40%;
+        font-weight: bold;
+    }
+
+    .input-row input,
+    .input-row select {
+        width: 58%;
+        padding: 5px;
+        border: none;
+        font-size: 14px;
+    }
+
+.notes-box {
+    width: 100%;
+    height: 400px;
+    background-color: lightgray;
+    border: none;
+    padding: 10px;
+    resize: none;
+}
+
+.notes-label {
+    align-self: flex-start;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.form-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.button {
+    background-color: lightgray;
+    border: none;
+    padding: 10px 20px;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 5px;
+}

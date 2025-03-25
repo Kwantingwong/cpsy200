@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("cpsy200")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+183ee5f872fabc3f03ca1631834de706b0f84cdd")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+a695b22a235d731efe4ded27deafde538369308b")]
 [assembly: System.Reflection.AssemblyProductAttribute("cpsy200")]
 [assembly: System.Reflection.AssemblyTitleAttribute("cpsy200")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

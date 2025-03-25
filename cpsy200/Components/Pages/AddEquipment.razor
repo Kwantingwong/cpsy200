@@ -1,8 +1,98 @@
-﻿@page "/addequipment"
+﻿@page "/add-equipment"
 
+<h2 class="form-title">Add Equipment</h2>
 
-<h3>Add Equipment</h3>
+<div class="form-wrapper">
+    <div class="form-left">
+        <div class="input-row">
+            <label>Generated ID:</label>
+            <input type="text" @bind="EquipmentID" disabled />
+        </div>
+
+        <div class="input-row">
+            <label>Equipment Name:</label>
+            <input type="text" @bind="EquipmentName" />
+        </div>
+
+        <div class="input-row">
+            <label>Category:</label>
+            <select @bind="SelectedCategoryID">
+                @foreach (var category in CategoryList)
+                {
+                    <option value="@category.CategoryID">@($"{category.CategoryID:D2} - {category.CategoryName}")</option>
+                }
+            </select>
+        </div>
+
+        <div class="input-row">
+            <label>Description:</label>
+            <input type="text" @bind="Description" />
+        </div>
+
+        <div class="input-row">
+            <label>Daily Rental Cost:</label>
+            <input type="number" step="0.01" @bind="DailyRentalCost" />
+        </div>
+
+        <div class="input-row">
+            <label>Status:</label>
+            <input type="text" @bind="Status" disabled />
+        </div>
+
+        <div class="input-row">
+            <label>Condition:</label>
+            <input type="text" @bind="Condition" disabled />
+        </div>
+
+        <div class="input-row">
+            <label>Location:</label>
+            <input type="text" @bind="Location" disabled />
+        </div>
+    </div>
+
+    <div class="form-right">
+        <label class="notes-label">Notes:</label>
+        <textarea @bind="Notes" class="notes-box"></textarea>
+        <button class="button">Edit Notes</button>
+    </div>
+</div>
+
+<div class="form-buttons">
+    <button class="button" @onclick="SaveEquipment">Save Changes</button>
+    <button class="button" @onclick="GoBack">Back To Home</button>
+</div>
 
 @code {
+    private int EquipmentID = new Random().Next(1000, 9999);
+    private string EquipmentName;
+    private int SelectedCategoryID;
+    private string Description;
+    private decimal DailyRentalCost;
+    private string Status = "Available";
+    private string Condition = "New";
+    private string Location = "Storage";
+    private string Notes;
 
+    private List<Category> CategoryList = new();
+
+    [Inject] private NavigationManager NavigationManager { get; set; }
+
+    protected override void OnInitialized()
+    {
+        CategoryList = CategoryManager.GetCategories();
+        if (CategoryList.Any())
+        {
+            SelectedCategoryID = CategoryList.First().CategoryID;
+        }
+    }
+
+    private void SaveEquipment()
+    {
+        // save logic
+    }
+
+    private void GoBack()
+    {
+        NavigationManager.NavigateTo("/");
+    }
 }
