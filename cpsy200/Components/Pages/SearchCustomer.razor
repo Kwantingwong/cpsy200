@@ -6,14 +6,14 @@
     <div class="form-left">
         <div class="input-row">
             <label>Enter Criteria:</label>
-             <input type="text" list="customerList" @bind="SearchKeyword" />
+            <input type="text" list="customerList" @bind="SearchKeyword" />
 
-    <datalist id="customerList">
+            <datalist id="customerList">
                 @foreach (var customer in CustomerManager.Customers)
                 {
-                <option value="@customer.Name">@($"{customer.CustomerID} - {customer.Name}")</option>
+                    <option value="@customer.FirstName">@($"{customer.CustomerID} - {customer.FirstName} {customer.LastName}")</option>
                 }
-    </datalist>
+            </datalist>
         </div>
 
         <div class="input-row">
@@ -22,8 +22,13 @@
         </div>
 
         <div class="input-row">
-            <label>Full Name:</label>
-            <input type="text" @bind="Name" disabled />
+            <label>First Name:</label>
+            <input type="text" @bind="FirstName" disabled />
+        </div>
+
+        <div class="input-row">
+            <label>Last Name:</label>
+            <input type="text" @bind="LastName" disabled />
         </div>
 
         <div class="input-row">
@@ -37,20 +42,14 @@
         </div>
 
         <div class="input-row">
-            <label>Address:</label>
-            <input type="text" @bind="Address" disabled />
-        </div>
-
-        <div class="input-row">
             <label>Status:</label>
             <input type="text" @bind="Status" disabled />
         </div>
 
         <div class="input-row">
             <label>Personal Discount:</label>
-            <input type="text" @bind="PersonalDiscountText" disabled />
+            <input type="number" @bind="PersonalDiscount" disabled />
         </div>
-
     </div>
 
     <div class="form-right">
@@ -63,41 +62,41 @@
     <button class="button" @onclick="Update">View Customer</button>
     <button class="button" @onclick="ClearFields">Clear Fields</button>
     <button class="button" @onclick="ModifyCustomer" disabled="@string.IsNullOrEmpty(CustomerIDText)">Modify Customer</button>
-
     <button class="button" @onclick="GoBack">Back To Home</button>
 </div>
 
 @code {
     private string SearchKeyword;
     private string CustomerIDText;
-    private string Name;
+    private string FirstName;
+    private string LastName;
     private string Email;
     private string Phone;
-    private string Address;
     private string Status;
-    private string PersonalDiscountText;
+    private int PersonalDiscount;
     private string Notes;
 
     [Inject] private NavigationManager NavigationManager { get; set; }
 
+    // Update customer based on the SearchKeyword entered
     private void Update()
     {
         var customer = CustomerManager.Customers.FirstOrDefault(c =>
             c.CustomerID.ToString().Contains(SearchKeyword, StringComparison.OrdinalIgnoreCase) ||
-            c.Name.Contains(SearchKeyword, StringComparison.OrdinalIgnoreCase) ||
+            c.FirstName.Contains(SearchKeyword, StringComparison.OrdinalIgnoreCase) ||
+            c.LastName.Contains(SearchKeyword, StringComparison.OrdinalIgnoreCase) ||
             c.Email.Contains(SearchKeyword, StringComparison.OrdinalIgnoreCase) ||
-            c.Phone.Contains(SearchKeyword, StringComparison.OrdinalIgnoreCase) ||
-            c.Address.Contains(SearchKeyword, StringComparison.OrdinalIgnoreCase));
+            c.Phone.Contains(SearchKeyword, StringComparison.OrdinalIgnoreCase));
 
         if (customer != null)
         {
             CustomerIDText = customer.CustomerID.ToString();
-            Name = customer.Name;
+            FirstName = customer.FirstName;
+            LastName = customer.LastName;
             Email = customer.Email;
             Phone = customer.Phone;
-            Address = customer.Address;
             Status = customer.Status;
-            PersonalDiscountText = customer.PersonalDiscount.ToString();
+            PersonalDiscount = customer.PersonalDiscount;
             Notes = customer.Notes;
         }
         else
@@ -106,23 +105,20 @@
         }
     }
 
+    // Clear all fields when no match is found or when clearing
     private void ClearFields()
     {
         CustomerIDText = "";
-        Name = "";
+        FirstName = "";
+        LastName = "";
         Email = "";
         Phone = "";
-        Address = "";
         Status = "";
-        PersonalDiscountText = "";
+        PersonalDiscount = 0;
         Notes = "";
     }
 
-    private void GoBack()
-    {
-        NavigationManager.NavigateTo("/");
-    }
-
+    // Navigate to modify the customer information page
     private void ModifyCustomer()
     {
         if (!string.IsNullOrEmpty(CustomerIDText))
@@ -131,4 +127,9 @@
         }
     }
 
+    // Navigate back to the home page
+    private void GoBack()
+    {
+        NavigationManager.NavigateTo("/"); // Go back to home or previous page
+    }
 }

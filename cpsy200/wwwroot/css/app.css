@@ -230,3 +230,20 @@ input[disabled] {
     border-radius: 6px; /* Optional: adds rounded corners to inputs */
     border: 1px solid #ccc;
 }
+
+/*remove*/
+.checkbox-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+    .checkbox-options label {
+        margin-right: 10px;
+        font-size: 14px;
+    }
+
+
+.button:hover {
+    background-color: #0056b3;
+}

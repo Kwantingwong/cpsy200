@@ -1,0 +1,78 @@
+﻿@page "/add-category"
+
+<h2 class="form-title">Add New Category</h2>
+
+<div class="form-wrapper">
+    <div class="form-left">
+        <div class="input-row">
+            <label>New Generated Category ID:</label>
+            <input type="text" @bind="CategoryIDText" disabled />
+        </div>
+
+        <label>Enter the Following Information:</label>
+
+        <!-- Category Name -->
+        <div class="input-row">
+            <label>Name:</label>
+            <input type="text" @bind="CategoryName" />
+        </div>
+
+        <!-- Category Description -->
+        <div class="input-row">
+            <label>Description:</label>
+            <textarea @bind="CategoryDescription"></textarea>
+        </div>
+
+    </div>
+
+    <div class="form-right">
+        <label>Notes:</label>
+        <textarea @bind="Notes" class="notes-box"></textarea>
+    </div>
+</div>
+
+<div class="form-buttons">
+    <button class="button" @onclick="SubmitCategory">Add</button>
+    <button class="button" @onclick="GoBack">Back To Home</button>
+</div>
+
+@if (showSuccess)
+{
+    <p class="text-success">✅ Category added!</p>
+}
+
+@code {
+    private string CategoryIDText = new Random().Next(1000, 9999).ToString();  // Generate random ID
+    private string CategoryName;
+    private string CategoryDescription;
+    private string Notes;
+    private bool showSuccess = false;
+
+    [Inject] private NavigationManager NavigationManager { get; set; }
+
+    private void GoBack()
+    {
+        NavigationManager.NavigateTo("/");  // Go back to home or the previous page
+    }
+
+    private void SubmitCategory()
+    {
+        // Simulate adding the category (e.g., add to database or list)
+        var category = new Category
+        {
+            CategoryID = int.Parse(CategoryIDText),
+            CategoryName = CategoryName,
+            CategoryDescription = CategoryDescription,
+            Notes = Notes
+        };
+
+        CategoryManager.AddCategory(category);  // Assuming CategoryManager is where you store categories
+
+        // Reset form after submission
+        CategoryIDText = new Random().Next(1000, 9999).ToString();
+        CategoryName = "";
+        CategoryDescription = "";
+        Notes = "";
+        showSuccess = true;
+    }
+}

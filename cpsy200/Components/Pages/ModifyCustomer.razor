@@ -10,13 +10,13 @@
         </div>
 
         <div class="input-row">
-            <label>Full Name:</label>
-            <input type="text" @bind="Name" />
+            <label>First Name:</label>
+            <input type="text" @bind="FirstName" />
         </div>
 
         <div class="input-row">
-            <label>Email:</label>
-            <input type="text" @bind="Email" />
+            <label>Last Name:</label>
+            <input type="text" @bind="LastName" />
         </div>
 
         <div class="input-row">
@@ -25,8 +25,8 @@
         </div>
 
         <div class="input-row">
-            <label>Address:</label>
-            <input type="text" @bind="Address" />
+            <label>Email:</label>
+            <input type="text" @bind="Email" />
         </div>
 
         <div class="input-row">
@@ -65,10 +65,10 @@
     public int CustomerID { get; set; }
 
     private string CustomerIDText;
-    private string Name;
-    private string Email;
+    private string FirstName;
+    private string LastName;
     private string Phone;
-    private string Address;
+    private string Email;
     private string Status;
     private int PersonalDiscount;
     private string Notes;
@@ -83,17 +83,17 @@
         if (customer != null)
         {
             CustomerIDText = customer.CustomerID.ToString();
-            Name = customer.Name;
-            Email = customer.Email;
+            FirstName = customer.FirstName;
+            LastName = customer.LastName;
             Phone = customer.Phone;
-            Address = customer.Address;
+            Email = customer.Email;
             Status = customer.Status;
             PersonalDiscount = customer.PersonalDiscount;
             Notes = customer.Notes;
         }
         else
         {
-            NavigationManager.NavigateTo("/search-customer");
+            NavigationManager.NavigateTo("/search-customer"); // Redirect to search if customer not found
         }
     }
 
@@ -103,10 +103,10 @@
 
         if (customer != null)
         {
-            customer.Name = Name;
-            customer.Email = Email;
+            customer.FirstName = FirstName;
+            customer.LastName = LastName;
             customer.Phone = Phone;
-            customer.Address = Address;
+            customer.Email = Email;
             customer.Status = Status;
             customer.PersonalDiscount = PersonalDiscount;
             customer.Notes = Notes;
@@ -118,6 +118,6 @@
 
     private void GoBack()
     {
-        NavigationManager.NavigateTo("/");
+        NavigationManager.NavigateTo("/"); // Navigate back to home or previous page
     }
 }

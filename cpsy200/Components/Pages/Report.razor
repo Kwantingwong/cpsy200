@@ -1,6 +1,7 @@
 ﻿@page "/view-reports"
 @using System.Text
 @using System.Globalization
+@using cpsy200.Data
 
 <h2 class="form-title">View Reports</h2>
 
@@ -102,6 +103,7 @@
             var categories = CategoryManager.GetCategories() ?? new List<Category>();
 
             var report = new StringBuilder();
+            string reportName = SelectedFilter == "All" ? "All" : SelectedFilter;
 
             if (SelectedReportType == "SalesByDate")
             {
@@ -164,6 +166,9 @@
                     report.AppendLine($"{name} - {group.Count()} rentals");
                 }
             }
+
+            // Generate and save the report
+            ReportManager.GenerateAndSaveReport(SelectedReportType, reportName, report.ToString());
 
             // Display the report content
             ReportContent = report.ToString();

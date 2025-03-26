@@ -1,3 +1,27 @@
-2001,Alice Smith,alice@example.com,123-456-7890,123 Elm St,Active,10, Here is some notesssss
-2002,Bob Johnson,bob@example.com,987-654-3210,456 Oak Ave,Banned,0, I dont have note for this customer
-2003,Charlie Lee,charlie@example.com,555-123-4567,789 Pine Rd,Active,5, hmmmm
+2001,Alice,Smith,123-456-7890,alice@example.com,Active,10,Here is some notesssss
+2002,Bob,Johnson,987-654-3210,bob@example.com,Banned,0,I dont have note for this customer
+2003,Charlie,Lee,555-123-4567,charlie@example.com,Active,10,hmmmm
+8109,TestFirst,TestLast,5196143838,thisisemail@gmail.com,Active,0,Note and Note
+2010,David,Martin,4131234567,david.martin@example.com,Active,15,Customer is loyal and regular
+2021,Eve,Walker,4056789012,eve.walker@example.com,Active,5,Hasn’t been active for a while
+2032,Frank,Green,3309876543,frank.green@example.com,Active,8,Regular customer
+2043,Grace,Clark,2105551234,grace.clark@example.com,Active,12,Customer is happy with our services
+2054,Hank,King,6098765432,hank.king@example.com,Banned,0,Reported for inappropriate behavior
+2065,Isla,Adams,5172349876,isla.adams@example.com,Active,7,No notes available for this customer
+2076,Jack,Moore,6189123456,jack.moore@example.com,Active,20,One of our top customers
+2087,Kim,Scott,7087630987,kim.scott@example.com,Banned,2,Not very active recently
+2098,Liam,Taylor,8172349876,liam.taylor@example.com,Active,5,Customer requested more product variety
+2109,Mona,Brown,6164738290,mona.brown@example.com,Active,10,Enjoys premium services
+2110,Noah,Williams,4079123456,noah.williams@example.com,Banned,0,Inactive for over a year
+2121,Olivia,Martin,5162348765,olivia.martin@example.com,Active,18,Frequent rentals
+2132,Parker,Young,8102345612,parker.young@example.com,Active,25,Great customer
+2143,Quincy,Harris,2150987623,quincy.harris@example.com,Active,3,Needs reminder for next rental
+2154,Rachel,Davis,9178361209,rachel.davis@example.com,Active,13,Customer is satisfied with recent rentals
+2165,Sam,Garcia,3145689021,sam.garcia@example.com,Banned,0,Violation of rental policies
+2176,Tyler,Evans,2148769098,tyler.evans@example.com,Active,9,No complaints
+2187,Ursula,Roberts,4057890123,ursula.roberts@example.com,Active,6,Occasional rental
+2198,Vera,Perez,3124690578,vera.perez@example.com,Active,8,Enjoys discounts
+2209,William,Morris,6091234567,william.morris@example.com,Active,10,Top customer
+2210,Xander,Lee,7142093876,xander.lee@example.com,Banned,1,Hasn’t rented in several months
+2221,Yasmine,Allen,3234567890,yasmine.allen@example.com,Active,16,Loyal customer
+2232,Zoe,King,5248765432,zoe.king@example.com,Active,4,No issues with rental

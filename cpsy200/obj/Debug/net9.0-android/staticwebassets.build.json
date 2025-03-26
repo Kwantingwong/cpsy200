@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "ihuJ3suDuZYYsuLordL8moysrsEdLBJkwgWOeYRfPYk=",
+  "Hash": "0KmprrmbEoeVE7n5mkrv0Hz2P4wdno0uLkvrf4WsM7s=",
   "Source": "cpsy200",
   "BasePath": "/",
   "Mode": "Root",
@@ -38,12 +38,12 @@
       "OriginalItemSpec": "C:\\Joy_Sem2\\software_analysis\\final_proj\\github\\cpsy200\\cpsy200\\wwwroot\\index.html"
     },
     {
-      "Identity": "C:\\Joy_Sem2\\software_analysis\\final_proj\\github\\cpsy200\\cpsy200\\obj\\Debug\\net9.0-android\\compressed\\nmtpv8s0wb-y4iigbovy4.gz",
+      "Identity": "C:\\Joy_Sem2\\software_analysis\\final_proj\\github\\cpsy200\\cpsy200\\obj\\Debug\\net9.0-android\\compressed\\nmtpv8s0wb-60k0s7e8he.gz",
       "SourceId": "cpsy200",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Joy_Sem2\\software_analysis\\final_proj\\github\\cpsy200\\cpsy200\\obj\\Debug\\net9.0-android\\compressed\\",
       "BasePath": "/",
-      "RelativePath": "css/app#[.{fingerprint=y4iigbovy4}]?.css.gz",
+      "RelativePath": "css/app#[.{fingerprint=60k0s7e8he}]?.css.gz",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Alternative",
@@ -52,8 +52,8 @@
       "RelatedAsset": "C:\\Joy_Sem2\\software_analysis\\final_proj\\github\\cpsy200\\cpsy200\\wwwroot\\css\\app.css",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
-      "Fingerprint": "7csyums2wm",
-      "Integrity": "9/ldh2y8faAoVR8nnbebEcszzvXmlM0MOqzNYO/FRcQ=",
+      "Fingerprint": "coqos5kcn9",
+      "Integrity": "9FJYPr0qoOu9aHMC8/u0ZH93vGC3jP3Cn7miT/Qk/s0=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Joy_Sem2\\software_analysis\\final_proj\\github\\cpsy200\\cpsy200\\wwwroot\\css\\app.css"
@@ -199,8 +199,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "y4iigbovy4",
-      "Integrity": "rneOKySCwEuCSKW0DBM9J86xdrD6HtVJvan5vPGqvZc=",
+      "Fingerprint": "60k0s7e8he",
+      "Integrity": "Rl02ZiPaBdNJJPKGkEym4+uLtDl7blmzrHfEpsuDsUs=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\app.css"
@@ -867,13 +867,13 @@
       ]
     },
     {
-      "Route": "css/app.css",
-      "AssetFile": "C:\\Joy_Sem2\\software_analysis\\final_proj\\github\\cpsy200\\cpsy200\\obj\\Debug\\net9.0-android\\compressed\\nmtpv8s0wb-y4iigbovy4.gz",
+      "Route": "css/app.60k0s7e8he.css",
+      "AssetFile": "C:\\Joy_Sem2\\software_analysis\\final_proj\\github\\cpsy200\\cpsy200\\obj\\Debug\\net9.0-android\\compressed\\nmtpv8s0wb-60k0s7e8he.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.000401606426"
+          "Quality": "0.000392464678"
         }
       ],
       "ResponseHeaders": [
@@ -883,19 +883,19 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "2489"
+          "Value": "2547"
         },
         {
           "Name": "ETag",
-          "Value": "\"9/ldh2y8faAoVR8nnbebEcszzvXmlM0MOqzNYO/FRcQ=\""
+          "Value": "\"9FJYPr0qoOu9aHMC8/u0ZH93vGC3jP3Cn7miT/Qk/s0=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 25 Mar 2025 22:07:34 GMT"
+          "Value": "Wed, 26 Mar 2025 01:34:29 GMT"
         },
         {
           "Name": "Cache-Control",
-          "Value": "no-cache"
+          "Value": "max-age=31536000, immutable"
         },
         {
           "Name": "Content-Encoding",
@@ -911,18 +911,26 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"rneOKySCwEuCSKW0DBM9J86xdrD6HtVJvan5vPGqvZc=\""
+          "Value": "W/\"Rl02ZiPaBdNJJPKGkEym4+uLtDl7blmzrHfEpsuDsUs=\""
         }
       ],
       "EndpointProperties": [
         {
+          "Name": "fingerprint",
+          "Value": "60k0s7e8he"
+        },
+        {
+          "Name": "label",
+          "Value": "css/app.css"
+        },
+        {
           "Name": "integrity",
-          "Value": "sha256-rneOKySCwEuCSKW0DBM9J86xdrD6HtVJvan5vPGqvZc="
+          "Value": "sha256-Rl02ZiPaBdNJJPKGkEym4+uLtDl7blmzrHfEpsuDsUs="
         }
       ]
     },
     {
-      "Route": "css/app.css",
+      "Route": "css/app.60k0s7e8he.css",
       "AssetFile": "C:\\Joy_Sem2\\software_analysis\\final_proj\\github\\cpsy200\\cpsy200\\wwwroot\\css\\app.css",
       "Selectors": [],
       "ResponseHeaders": [
@@ -932,7 +940,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "6148"
+          "Value": "6393"
         },
         {
           "Name": "Content-Type",
@@ -940,121 +948,21 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"rneOKySCwEuCSKW0DBM9J86xdrD6HtVJvan5vPGqvZc=\""
+          "Value": "\"Rl02ZiPaBdNJJPKGkEym4+uLtDl7blmzrHfEpsuDsUs=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 25 Mar 2025 22:07:34 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-rneOKySCwEuCSKW0DBM9J86xdrD6HtVJvan5vPGqvZc="
-        }
-      ]
-    },
-    {
-      "Route": "css/app.css.gz",
-      "AssetFile": "C:\\Joy_Sem2\\software_analysis\\final_proj\\github\\cpsy200\\cpsy200\\obj\\Debug\\net9.0-android\\compressed\\nmtpv8s0wb-y4iigbovy4.gz",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "2489"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"9/ldh2y8faAoVR8nnbebEcszzvXmlM0MOqzNYO/FRcQ=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Tue, 25 Mar 2025 22:07:34 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        },
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip"
-        },
-        {
-          "Name": "Vary",
-          "Value": "Content-Encoding"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-9/ldh2y8faAoVR8nnbebEcszzvXmlM0MOqzNYO/FRcQ="
-        }
-      ]
-    },
-    {
-      "Route": "css/app.y4iigbovy4.css",
-      "AssetFile": "C:\\Joy_Sem2\\software_analysis\\final_proj\\github\\cpsy200\\cpsy200\\obj\\Debug\\net9.0-android\\compressed\\nmtpv8s0wb-y4iigbovy4.gz",
-      "Selectors": [
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip",
-          "Quality": "0.000401606426"
-        }
-      ],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "2489"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"9/ldh2y8faAoVR8nnbebEcszzvXmlM0MOqzNYO/FRcQ=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Tue, 25 Mar 2025 22:07:34 GMT"
+          "Value": "Wed, 26 Mar 2025 01:34:29 GMT"
         },
         {
           "Name": "Cache-Control",
           "Value": "max-age=31536000, immutable"
-        },
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip"
-        },
-        {
-          "Name": "Vary",
-          "Value": "Content-Encoding"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "W/\"rneOKySCwEuCSKW0DBM9J86xdrD6HtVJvan5vPGqvZc=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "y4iigbovy4"
+          "Value": "60k0s7e8he"
         },
         {
           "Name": "label",
@@ -1062,13 +970,13 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-rneOKySCwEuCSKW0DBM9J86xdrD6HtVJvan5vPGqvZc="
+          "Value": "sha256-Rl02ZiPaBdNJJPKGkEym4+uLtDl7blmzrHfEpsuDsUs="
         }
       ]
     },
     {
-      "Route": "css/app.y4iigbovy4.css",
-      "AssetFile": "C:\\Joy_Sem2\\software_analysis\\final_proj\\github\\cpsy200\\cpsy200\\wwwroot\\css\\app.css",
+      "Route": "css/app.60k0s7e8he.css.gz",
+      "AssetFile": "C:\\Joy_Sem2\\software_analysis\\final_proj\\github\\cpsy200\\cpsy200\\obj\\Debug\\net9.0-android\\compressed\\nmtpv8s0wb-60k0s7e8he.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -1077,7 +985,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "6148"
+          "Value": "2547"
         },
         {
           "Name": "Content-Type",
@@ -1085,56 +993,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"rneOKySCwEuCSKW0DBM9J86xdrD6HtVJvan5vPGqvZc=\""
+          "Value": "\"9FJYPr0qoOu9aHMC8/u0ZH93vGC3jP3Cn7miT/Qk/s0=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 25 Mar 2025 22:07:34 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "y4iigbovy4"
-        },
-        {
-          "Name": "label",
-          "Value": "css/app.css"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-rneOKySCwEuCSKW0DBM9J86xdrD6HtVJvan5vPGqvZc="
-        }
-      ]
-    },
-    {
-      "Route": "css/app.y4iigbovy4.css.gz",
-      "AssetFile": "C:\\Joy_Sem2\\software_analysis\\final_proj\\github\\cpsy200\\cpsy200\\obj\\Debug\\net9.0-android\\compressed\\nmtpv8s0wb-y4iigbovy4.gz",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "2489"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"9/ldh2y8faAoVR8nnbebEcszzvXmlM0MOqzNYO/FRcQ=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Tue, 25 Mar 2025 22:07:34 GMT"
+          "Value": "Wed, 26 Mar 2025 01:34:29 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1152,7 +1015,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "y4iigbovy4"
+          "Value": "60k0s7e8he"
         },
         {
           "Name": "label",
@@ -1160,7 +1023,144 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-9/ldh2y8faAoVR8nnbebEcszzvXmlM0MOqzNYO/FRcQ="
+          "Value": "sha256-9FJYPr0qoOu9aHMC8/u0ZH93vGC3jP3Cn7miT/Qk/s0="
+        }
+      ]
+    },
+    {
+      "Route": "css/app.css",
+      "AssetFile": "C:\\Joy_Sem2\\software_analysis\\final_proj\\github\\cpsy200\\cpsy200\\obj\\Debug\\net9.0-android\\compressed\\nmtpv8s0wb-60k0s7e8he.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.000392464678"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2547"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"9FJYPr0qoOu9aHMC8/u0ZH93vGC3jP3Cn7miT/Qk/s0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 26 Mar 2025 01:34:29 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"Rl02ZiPaBdNJJPKGkEym4+uLtDl7blmzrHfEpsuDsUs=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-Rl02ZiPaBdNJJPKGkEym4+uLtDl7blmzrHfEpsuDsUs="
+        }
+      ]
+    },
+    {
+      "Route": "css/app.css",
+      "AssetFile": "C:\\Joy_Sem2\\software_analysis\\final_proj\\github\\cpsy200\\cpsy200\\wwwroot\\css\\app.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "6393"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Rl02ZiPaBdNJJPKGkEym4+uLtDl7blmzrHfEpsuDsUs=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 26 Mar 2025 01:34:29 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-Rl02ZiPaBdNJJPKGkEym4+uLtDl7blmzrHfEpsuDsUs="
+        }
+      ]
+    },
+    {
+      "Route": "css/app.css.gz",
+      "AssetFile": "C:\\Joy_Sem2\\software_analysis\\final_proj\\github\\cpsy200\\cpsy200\\obj\\Debug\\net9.0-android\\compressed\\nmtpv8s0wb-60k0s7e8he.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2547"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"9FJYPr0qoOu9aHMC8/u0ZH93vGC3jP3Cn7miT/Qk/s0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 26 Mar 2025 01:34:29 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-9FJYPr0qoOu9aHMC8/u0ZH93vGC3jP3Cn7miT/Qk/s0="
         }
       ]
     },

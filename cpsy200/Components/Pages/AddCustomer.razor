@@ -10,13 +10,13 @@
         </div>
 
         <div class="input-row">
-            <label>Full Name:</label>
-            <input type="text" @bind="Name" />
+            <label>First Name:</label>
+            <input type="text" @bind="FirstName" />
         </div>
 
         <div class="input-row">
-            <label>Email:</label>
-            <input type="email" @bind="Email" />
+            <label>Last Name:</label>
+            <input type="text" @bind="LastName" />
         </div>
 
         <div class="input-row">
@@ -25,8 +25,8 @@
         </div>
 
         <div class="input-row">
-            <label>Address:</label>
-            <input type="text" @bind="Address" />
+            <label>Email:</label>
+            <input type="email" @bind="Email" />
         </div>
 
         <div class="input-row">
@@ -57,19 +57,18 @@
 
 @if (showSuccess)
 {
-        <p class="text-success">✅ Customer saved!</p>
+    <p class="text-success">✅ Customer saved!</p>
 }
 
 @code {
     private int CustomerID = new Random().Next(2000, 9999);
-    private string Name;
-    private string Email;
+    private string FirstName;
+    private string LastName;
     private string Phone;
-    private string Address;
+    private string Email;
     private string Status = "Active";
     private int PersonalDiscount = 0;
     private string Notes;
-
 
     private bool showSuccess = false;
 
@@ -77,23 +76,24 @@
 
     private void GoBack()
     {
-        NavigationManager.NavigateTo("/");
+        NavigationManager.NavigateTo("/"); // Navigate back to the home page
     }
 
     private void SaveCustomer()
     {
-        var line = $"{CustomerID},{Name},{Email},{Phone},{Address},{Status},{PersonalDiscount},{Notes}";
+        var line = $"{CustomerID},{FirstName},{LastName},{Phone},{Email},{Status},{PersonalDiscount},{Notes}";
         var customer = new Customer(line);
         CustomerManager.AddCustomer(customer);
 
-        // Reset form
+        // Reset form after saving customer
         CustomerID = new Random().Next(2000, 9999);
-        Name = "";
-        Email = "";
+        FirstName = "";
+        LastName = "";
         Phone = "";
-        Address = "";
+        Email = "";
         Status = "Active";
         PersonalDiscount = 0;
+        Notes = "";
         showSuccess = true;
     }
 }

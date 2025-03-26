@@ -11,33 +11,33 @@
 
         <label>Update Any of the Following:</label>
 
-        <!-- Status Section -->
+        <!-- Status Section as Dropdown -->
         <div class="input-row">
             <label>Status:</label>
-            <div>
-                <label><input type="checkbox" @bind="IsRemovedForParts" /> Removed - For Parts</label>
-                <label><input type="checkbox" @bind="IsRemovedForSale" /> Removed - For Sale</label>
-            </div>
+            <select @bind="SelectedStatus">
+                <option value="Removed - For Parts">Removed - For Parts</option>
+                <option value="Removed - For Sale">Removed - For Sale</option>
+            </select>
         </div>
 
-        <!-- Condition Section -->
+        <!-- Condition Section as Dropdown -->
         <div class="input-row">
             <label>Condition:</label>
-            <div>
-                <label><input type="checkbox" @bind="IsNew" /> New</label>
-                <label><input type="checkbox" @bind="IsUsed" /> Used</label>
-                <label><input type="checkbox" @bind="IsDamaged" /> Damaged</label>
-            </div>
+            <select @bind="SelectedCondition">
+                <option value="New">New</option>
+                <option value="Used">Used</option>
+                <option value="Damaged">Damaged</option>
+            </select>
         </div>
 
-        <!-- Location Section -->
+        <!-- Location Section as Dropdown -->
         <div class="input-row">
             <label>Location:</label>
-            <div>
-                <label><input type="checkbox" @bind="IsInSellingArea" /> Selling Area</label>
-                <label><input type="checkbox" @bind="IsInStorage" /> Storage</label>
-                <label><input type="checkbox" @bind="IsInScrapArea" /> Scrap Area</label>
-            </div>
+            <select @bind="SelectedLocation">
+                <option value="Selling Area">Selling Area</option>
+                <option value="Storage">Storage</option>
+                <option value="Scrap Area">Scrap Area</option>
+            </select>
         </div>
     </div>
 
@@ -52,20 +52,23 @@
     <button class="button" @onclick="GoBack">Back To Home</button>
 </div>
 
+
+@if (showSuccess)
+{
+    <p class="text-success">✅ Equipment Removed!</p>
+}
+
 @code {
     [Parameter]
     public int EquipmentID { get; set; }  // Declare EquipmentID as a parameter
 
     private string EquipmentIDText;
-    private bool IsRemovedForParts { get; set; }
-    private bool IsRemovedForSale { get; set; }
-    private bool IsNew { get; set; }
-    private bool IsUsed { get; set; }
-    private bool IsDamaged { get; set; }
-    private bool IsInSellingArea { get; set; }
-    private bool IsInStorage { get; set; }
-    private bool IsInScrapArea { get; set; }
+    private string SelectedStatus = "Removed - For Parts";
+    private string SelectedCondition = "New";
+    private string SelectedLocation = "Selling Area";
     private string Notes { get; set; }
+
+    private bool showSuccess = false;
 
     [Inject] private NavigationManager NavigationManager { get; set; }
 
@@ -78,20 +81,6 @@
         {
             EquipmentIDText = equipment.EquipmentID.ToString();
             Notes = equipment.Notes;
-
-            // Set the initial values for the checkboxes based on current equipment status
-            IsRemovedForParts = equipment.Status.Contains("For Parts");
-            IsRemovedForSale = equipment.Status.Contains("For Sale");
-
-            // Set the equipment condition
-            IsNew = equipment.Condition == "New";
-            IsUsed = equipment.Condition == "Used";
-            IsDamaged = equipment.Condition == "Damaged";
-
-            // Set the equipment location
-            IsInSellingArea = equipment.Location == "Selling Area";
-            IsInStorage = equipment.Location == "Storage";
-            IsInScrapArea = equipment.Location == "Scrap Area";
         }
         else
         {
@@ -107,17 +96,16 @@
         if (equipment != null)
         {
             // Update the equipment status, condition, location, and notes based on user input
-            equipment.Status = (IsRemovedForParts ? "Removed - For Parts" : "") + (IsRemovedForSale ? " Removed - For Sale" : "");
-            equipment.Condition = IsNew ? "New" : IsUsed ? "Used" : IsDamaged ? "Damaged" : equipment.Condition;
-            equipment.Location = IsInSellingArea ? "Selling Area" : IsInStorage ? "Storage" : IsInScrapArea ? "Scrap Area" : equipment.Location;
+            equipment.Status = SelectedStatus;
+            equipment.Condition = SelectedCondition;
+            equipment.Location = SelectedLocation;
             equipment.Notes = Notes;
 
             // Save changes to the equipment data
             EquipmentManager.SaveEquipments();
+            showSuccess = true;
 
-            // Navigate back to home after saving
-            NavigationManager.NavigateTo("/");  // Redirect to home page after removing equipment
-        }
+         }
     }
 
     private void GoBack()

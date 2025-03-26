@@ -1,0 +1,20 @@
+﻿ReportID,GeneratedDate,ReportType,Name,Content
+7837,2025-03-25 19:57:10,SalesByDate,All,📅 Sales by Date ------------------ 2025-03-01: $27.00 (1 rentals) 2025-03-05: $50.00 (1 rentals) 2025-03-10: $57.00 (1 rentals) 
+4092,2025-03-25 19:57:25,SalesByCustomer,2001,👤 Sales by Customer ---------------------- Alice Smith (ID: 2001) - $27.00 from 1 rentals 
+8761,2025-03-25 19:57:33,SalesByCustomer,2003,👤 Sales by Customer ---------------------- Charlie Lee (ID: 2003) - $57.00 from 1 rentals 
+7770,2025-03-25 19:57:38,SalesByDate,2025-03-05,📅 Sales by Date ------------------ 2025-03-05: $50.00 (1 rentals)
+4652,2025-03-26 09:12:10,ItemsByCategory,All,📦 Items Rented by Category ------------------ Category 1 - 3 rentals Category 2 - 2 rentals
+1234,2025-03-26 09:15:00,SalesByCustomer,2002,👤 Sales by Customer ---------------------- Bob Johnson (ID: 2002) - $100.00 from 5 rentals
+3567,2025-03-26 09:20:00,SalesByDate,2025-03-20,📅 Sales by Date ------------------ 2025-03-20: $80.00 (2 rentals)
+2169,2025-03-25 20:27:42,SalesByDate,All,📅 Sales by Date
+------------------
+2025-03-01: $27.00 (1 rentals)
+2025-03-05: $50.00 (1 rentals)
+2025-03-10: $57.00 (1 rentals)
+
+6286,2025-03-25 20:27:51,SalesByCustomer,All,👤 Sales by Customer
+----------------------
+Alice Smith (ID: 2001) - $27.00 from 1 rentals
+Bob Johnson (ID: 2002) - $50.00 from 1 rentals
+Charlie Lee (ID: 2003) - $57.00 from 1 rentals
+
