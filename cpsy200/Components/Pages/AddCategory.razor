@@ -69,10 +69,17 @@
         CategoryManager.AddCategory(category);  // Assuming CategoryManager is where you store categories
 
         // Reset form after submission
-        CategoryIDText = new Random().Next(1000, 9999).ToString();
+        GenerateNextCategoryID();
         CategoryName = "";
         CategoryDescription = "";
         Notes = "";
         showSuccess = true;
+    }
+
+    private void GenerateNextCategoryID()
+    {
+        var allCategories = CategoryManager.GetCategories();
+        int maxId = allCategories.Any() ? allCategories.Max(c => c.CategoryID) : 999;
+        CategoryIDText = (maxId + 1).ToString();
     }
 }

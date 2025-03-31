@@ -18,3 +18,62 @@ Alice Smith (ID: 2001) - $27.00 from 1 rentals
 Bob Johnson (ID: 2002) - $50.00 from 1 rentals
 Charlie Lee (ID: 2003) - $57.00 from 1 rentals
 
+4886,2025-03-31 16:42:14,SalesByDate,All,📅 Sales by Date
+------------------
+2025-03-01: $150.00 (1 rentals)
+2025-03-02: $100.00 (1 rentals)
+2025-03-03: $125.00 (1 rentals)
+2025-03-04: $75.00 (1 rentals)
+2025-03-05: $200.00 (1 rentals)
+2025-03-06: $250.00 (1 rentals)
+2025-03-07: $175.00 (1 rentals)
+2025-03-08: $150.00 (1 rentals)
+2025-03-09: $225.00 (1 rentals)
+2025-03-10: $100.00 (1 rentals)
+2025-03-11: $150.00 (1 rentals)
+2025-03-12: $125.00 (1 rentals)
+2025-03-13: $200.00 (1 rentals)
+2025-03-14: $275.00 (1 rentals)
+2025-03-15: $250.00 (1 rentals)
+2025-03-16: $300.00 (1 rentals)
+2025-03-17: $150.00 (1 rentals)
+2025-03-18: $225.00 (1 rentals)
+2025-03-19: $125.00 (1 rentals)
+2025-03-20: $175.00 (1 rentals)
+2025-03-21: $250.00 (1 rentals)
+2025-03-22: $200.00 (1 rentals)
+2025-03-23: $225.00 (1 rentals)
+2025-03-24: $150.00 (1 rentals)
+2025-03-25: $125.00 (1 rentals)
+2025-03-26: $250.00 (1 rentals)
+2025-03-27: $200.00 (1 rentals)
+2025-03-28: $225.00 (1 rentals)
+2025-03-29: $300.00 (1 rentals)
+2025-03-30: $175.00 (1 rentals)
+2025-03-31: $250.00 (1 rentals)
+2025-04-01: $150.00 (1 rentals)
+2025-04-02: $275.00 (1 rentals)
+2025-04-03: $200.00 (1 rentals)
+2025-04-04: $125.00 (1 rentals)
+2025-04-05: $300.00 (1 rentals)
+2025-04-06: $225.00 (1 rentals)
+2025-04-07: $250.00 (1 rentals)
+2025-04-08: $175.00 (1 rentals)
+2025-04-09: $150.00 (1 rentals)
+
+6802,2025-03-31 16:42:31,ItemsByCategory,All,📦 Items Rented by Category
+----------------------------
+Power Tools - 2 rentals
+Garden Equipment - 1 rentals
+
+9220,2025-03-31 16:42:34,ItemsByCategory,3,📦 Items Rented by Category
+----------------------------
+
+9488,2025-03-31 16:42:37,ItemsByCategory,7,📦 Items Rented by Category
+----------------------------
+
+9887,2025-03-31 16:42:40,ItemsByCategory,All,📦 Items Rented by Category
+----------------------------
+Power Tools - 2 rentals
+Garden Equipment - 1 rentals
+
