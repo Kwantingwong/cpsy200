@@ -3,44 +3,16 @@
   "WorkspaceRootPath": "C:\\Joy_Sem2\\software_analysis\\final_proj\\github\\cpsy200\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{24AC8499-8D4E-4413-88DD-57096E19C9E2}|cpsy200\\cpsy200.csproj|c:\\joy_sem2\\software_analysis\\final_proj\\github\\cpsy200\\cpsy200\\components\\pages\\addcategory.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{24AC8499-8D4E-4413-88DD-57096E19C9E2}|cpsy200\\cpsy200.csproj|solutionrelative:cpsy200\\components\\pages\\addcategory.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{24AC8499-8D4E-4413-88DD-57096E19C9E2}|cpsy200\\cpsy200.csproj|c:\\joy_sem2\\software_analysis\\final_proj\\github\\cpsy200\\cpsy200\\components\\pages\\addcustomer.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{24AC8499-8D4E-4413-88DD-57096E19C9E2}|cpsy200\\cpsy200.csproj|solutionrelative:cpsy200\\components\\pages\\addcustomer.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{24AC8499-8D4E-4413-88DD-57096E19C9E2}|cpsy200\\cpsy200.csproj|c:\\joy_sem2\\software_analysis\\final_proj\\github\\cpsy200\\cpsy200\\data\\categorymanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{24AC8499-8D4E-4413-88DD-57096E19C9E2}|cpsy200\\cpsy200.csproj|solutionrelative:cpsy200\\data\\categorymanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{24AC8499-8D4E-4413-88DD-57096E19C9E2}|cpsy200\\cpsy200.csproj|c:\\joy_sem2\\software_analysis\\final_proj\\github\\cpsy200\\cpsy200\\components\\pages\\home.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{24AC8499-8D4E-4413-88DD-57096E19C9E2}|cpsy200\\cpsy200.csproj|solutionrelative:cpsy200\\components\\pages\\home.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{24AC8499-8D4E-4413-88DD-57096E19C9E2}|cpsy200\\cpsy200.csproj|c:\\joy_sem2\\software_analysis\\final_proj\\github\\cpsy200\\cpsy200\\components\\pages\\searchrental.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{24AC8499-8D4E-4413-88DD-57096E19C9E2}|cpsy200\\cpsy200.csproj|solutionrelative:cpsy200\\components\\pages\\searchrental.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{24AC8499-8D4E-4413-88DD-57096E19C9E2}|cpsy200\\cpsy200.csproj|c:\\joy_sem2\\software_analysis\\final_proj\\github\\cpsy200\\cpsy200\\components\\layout\\navmenu.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{24AC8499-8D4E-4413-88DD-57096E19C9E2}|cpsy200\\cpsy200.csproj|solutionrelative:cpsy200\\components\\layout\\navmenu.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{24AC8499-8D4E-4413-88DD-57096E19C9E2}|cpsy200\\cpsy200.csproj|c:\\joy_sem2\\software_analysis\\final_proj\\github\\cpsy200\\cpsy200\\data\\category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{24AC8499-8D4E-4413-88DD-57096E19C9E2}|cpsy200\\cpsy200.csproj|solutionrelative:cpsy200\\data\\category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{24AC8499-8D4E-4413-88DD-57096E19C9E2}|cpsy200\\cpsy200.csproj|c:\\joy_sem2\\software_analysis\\final_proj\\github\\cpsy200\\cpsy200\\resources\\res\\category_list.csv||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{24AC8499-8D4E-4413-88DD-57096E19C9E2}|cpsy200\\cpsy200.csproj|solutionrelative:cpsy200\\resources\\res\\category_list.csv||{8B382828-6202-11D1-8870-0000F87579D2}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{24AC8499-8D4E-4413-88DD-57096E19C9E2}|cpsy200\\cpsy200.csproj|c:\\joy_sem2\\software_analysis\\final_proj\\github\\cpsy200\\cpsy200\\components\\pages\\addequipment.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{24AC8499-8D4E-4413-88DD-57096E19C9E2}|cpsy200\\cpsy200.csproj|solutionrelative:cpsy200\\components\\pages\\addequipment.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{24AC8499-8D4E-4413-88DD-57096E19C9E2}|cpsy200\\cpsy200.csproj|c:\\joy_sem2\\software_analysis\\final_proj\\github\\cpsy200\\cpsy200\\resources\\res\\customer_list.csv||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{24AC8499-8D4E-4413-88DD-57096E19C9E2}|cpsy200\\cpsy200.csproj|solutionrelative:cpsy200\\resources\\res\\customer_list.csv||{8B382828-6202-11D1-8870-0000F87579D2}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{24AC8499-8D4E-4413-88DD-57096E19C9E2}|cpsy200\\cpsy200.csproj|c:\\joy_sem2\\software_analysis\\final_proj\\github\\cpsy200\\cpsy200\\data\\customer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{24AC8499-8D4E-4413-88DD-57096E19C9E2}|cpsy200\\cpsy200.csproj|solutionrelative:cpsy200\\data\\customer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{24AC8499-8D4E-4413-88DD-57096E19C9E2}|cpsy200\\cpsy200.csproj|c:\\joy_sem2\\software_analysis\\final_proj\\github\\cpsy200\\cpsy200\\components\\pages\\searchequipment.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{24AC8499-8D4E-4413-88DD-57096E19C9E2}|cpsy200\\cpsy200.csproj|solutionrelative:cpsy200\\components\\pages\\searchequipment.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{24AC8499-8D4E-4413-88DD-57096E19C9E2}|cpsy200\\cpsy200.csproj|c:\\joy_sem2\\software_analysis\\final_proj\\github\\cpsy200\\cpsy200\\resources\\res\\rental_list.csv||{8B382828-6202-11D1-8870-0000F87579D2}",
@@ -49,6 +21,66 @@
     {
       "AbsoluteMoniker": "D:0:0:{24AC8499-8D4E-4413-88DD-57096E19C9E2}|cpsy200\\cpsy200.csproj|c:\\joy_sem2\\software_analysis\\final_proj\\github\\cpsy200\\cpsy200\\data\\rental.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{24AC8499-8D4E-4413-88DD-57096E19C9E2}|cpsy200\\cpsy200.csproj|solutionrelative:cpsy200\\data\\rental.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{24AC8499-8D4E-4413-88DD-57096E19C9E2}|cpsy200\\cpsy200.csproj|c:\\joy_sem2\\software_analysis\\final_proj\\github\\cpsy200\\cpsy200\\components\\pages\\addrental.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{24AC8499-8D4E-4413-88DD-57096E19C9E2}|cpsy200\\cpsy200.csproj|solutionrelative:cpsy200\\components\\pages\\addrental.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{24AC8499-8D4E-4413-88DD-57096E19C9E2}|cpsy200\\cpsy200.csproj|c:\\joy_sem2\\software_analysis\\final_proj\\github\\cpsy200\\cpsy200\\components\\pages\\removeequipment.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{24AC8499-8D4E-4413-88DD-57096E19C9E2}|cpsy200\\cpsy200.csproj|solutionrelative:cpsy200\\components\\pages\\removeequipment.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{24AC8499-8D4E-4413-88DD-57096E19C9E2}|cpsy200\\cpsy200.csproj|c:\\joy_sem2\\software_analysis\\final_proj\\github\\cpsy200\\cpsy200\\data\\customer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{24AC8499-8D4E-4413-88DD-57096E19C9E2}|cpsy200\\cpsy200.csproj|solutionrelative:cpsy200\\data\\customer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{24AC8499-8D4E-4413-88DD-57096E19C9E2}|cpsy200\\cpsy200.csproj|c:\\joy_sem2\\software_analysis\\final_proj\\github\\cpsy200\\cpsy200\\components\\pages\\modifyequipment.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{24AC8499-8D4E-4413-88DD-57096E19C9E2}|cpsy200\\cpsy200.csproj|solutionrelative:cpsy200\\components\\pages\\modifyequipment.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{24AC8499-8D4E-4413-88DD-57096E19C9E2}|cpsy200\\cpsy200.csproj|c:\\joy_sem2\\software_analysis\\final_proj\\github\\cpsy200\\cpsy200\\components\\pages\\addequipment.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{24AC8499-8D4E-4413-88DD-57096E19C9E2}|cpsy200\\cpsy200.csproj|solutionrelative:cpsy200\\components\\pages\\addequipment.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{24AC8499-8D4E-4413-88DD-57096E19C9E2}|cpsy200\\cpsy200.csproj|c:\\joy_sem2\\software_analysis\\final_proj\\github\\cpsy200\\cpsy200\\components\\pages\\addcustomer.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{24AC8499-8D4E-4413-88DD-57096E19C9E2}|cpsy200\\cpsy200.csproj|solutionrelative:cpsy200\\components\\pages\\addcustomer.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{24AC8499-8D4E-4413-88DD-57096E19C9E2}|cpsy200\\cpsy200.csproj|c:\\joy_sem2\\software_analysis\\final_proj\\github\\cpsy200\\cpsy200\\components\\pages\\report.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{24AC8499-8D4E-4413-88DD-57096E19C9E2}|cpsy200\\cpsy200.csproj|solutionrelative:cpsy200\\components\\pages\\report.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{24AC8499-8D4E-4413-88DD-57096E19C9E2}|cpsy200\\cpsy200.csproj|c:\\joy_sem2\\software_analysis\\final_proj\\github\\cpsy200\\cpsy200\\data\\rentalmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{24AC8499-8D4E-4413-88DD-57096E19C9E2}|cpsy200\\cpsy200.csproj|solutionrelative:cpsy200\\data\\rentalmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{24AC8499-8D4E-4413-88DD-57096E19C9E2}|cpsy200\\cpsy200.csproj|c:\\joy_sem2\\software_analysis\\final_proj\\github\\cpsy200\\cpsy200\\data\\equipmentmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{24AC8499-8D4E-4413-88DD-57096E19C9E2}|cpsy200\\cpsy200.csproj|solutionrelative:cpsy200\\data\\equipmentmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{24AC8499-8D4E-4413-88DD-57096E19C9E2}|cpsy200\\cpsy200.csproj|c:\\joy_sem2\\software_analysis\\final_proj\\github\\cpsy200\\cpsy200\\data\\report.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{24AC8499-8D4E-4413-88DD-57096E19C9E2}|cpsy200\\cpsy200.csproj|solutionrelative:cpsy200\\data\\report.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{24AC8499-8D4E-4413-88DD-57096E19C9E2}|cpsy200\\cpsy200.csproj|c:\\joy_sem2\\software_analysis\\final_proj\\github\\cpsy200\\cpsy200\\components\\pages\\home.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{24AC8499-8D4E-4413-88DD-57096E19C9E2}|cpsy200\\cpsy200.csproj|solutionrelative:cpsy200\\components\\pages\\home.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{24AC8499-8D4E-4413-88DD-57096E19C9E2}|cpsy200\\cpsy200.csproj|c:\\joy_sem2\\software_analysis\\final_proj\\github\\cpsy200\\cpsy200\\resources\\res\\category_list.csv||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{24AC8499-8D4E-4413-88DD-57096E19C9E2}|cpsy200\\cpsy200.csproj|solutionrelative:cpsy200\\resources\\res\\category_list.csv||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{24AC8499-8D4E-4413-88DD-57096E19C9E2}|cpsy200\\cpsy200.csproj|c:\\joy_sem2\\software_analysis\\final_proj\\github\\cpsy200\\cpsy200\\data\\categorymanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{24AC8499-8D4E-4413-88DD-57096E19C9E2}|cpsy200\\cpsy200.csproj|solutionrelative:cpsy200\\data\\categorymanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{24AC8499-8D4E-4413-88DD-57096E19C9E2}|cpsy200\\cpsy200.csproj|c:\\joy_sem2\\software_analysis\\final_proj\\github\\cpsy200\\cpsy200\\data\\category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{24AC8499-8D4E-4413-88DD-57096E19C9E2}|cpsy200\\cpsy200.csproj|solutionrelative:cpsy200\\data\\category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{24AC8499-8D4E-4413-88DD-57096E19C9E2}|cpsy200\\cpsy200.csproj|c:\\joy_sem2\\software_analysis\\final_proj\\github\\cpsy200\\cpsy200\\resources\\res\\customer_list.csv||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{24AC8499-8D4E-4413-88DD-57096E19C9E2}|cpsy200\\cpsy200.csproj|solutionrelative:cpsy200\\resources\\res\\customer_list.csv||{8B382828-6202-11D1-8870-0000F87579D2}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{24AC8499-8D4E-4413-88DD-57096E19C9E2}|cpsy200\\cpsy200.csproj|c:\\joy_sem2\\software_analysis\\final_proj\\github\\cpsy200\\cpsy200\\resources\\res\\equipment_list.csv||{8B382828-6202-11D1-8870-0000F87579D2}",
@@ -63,28 +95,12 @@
       "RelativeMoniker": "D:0:0:{24AC8499-8D4E-4413-88DD-57096E19C9E2}|cpsy200\\cpsy200.csproj|solutionrelative:cpsy200\\resources\\res\\report_list.csv||{8B382828-6202-11D1-8870-0000F87579D2}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{24AC8499-8D4E-4413-88DD-57096E19C9E2}|cpsy200\\cpsy200.csproj|c:\\joy_sem2\\software_analysis\\final_proj\\github\\cpsy200\\cpsy200\\components\\pages\\report.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{24AC8499-8D4E-4413-88DD-57096E19C9E2}|cpsy200\\cpsy200.csproj|solutionrelative:cpsy200\\components\\pages\\report.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{24AC8499-8D4E-4413-88DD-57096E19C9E2}|cpsy200\\cpsy200.csproj|c:\\joy_sem2\\software_analysis\\final_proj\\github\\cpsy200\\cpsy200\\data\\reportmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{24AC8499-8D4E-4413-88DD-57096E19C9E2}|cpsy200\\cpsy200.csproj|solutionrelative:cpsy200\\data\\reportmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{24AC8499-8D4E-4413-88DD-57096E19C9E2}|cpsy200\\cpsy200.csproj|c:\\joy_sem2\\software_analysis\\final_proj\\github\\cpsy200\\cpsy200\\data\\report.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{24AC8499-8D4E-4413-88DD-57096E19C9E2}|cpsy200\\cpsy200.csproj|solutionrelative:cpsy200\\data\\report.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{24AC8499-8D4E-4413-88DD-57096E19C9E2}|cpsy200\\cpsy200.csproj|c:\\joy_sem2\\software_analysis\\final_proj\\github\\cpsy200\\cpsy200\\components\\pages\\searchcustomer.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{24AC8499-8D4E-4413-88DD-57096E19C9E2}|cpsy200\\cpsy200.csproj|solutionrelative:cpsy200\\components\\pages\\searchcustomer.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{24AC8499-8D4E-4413-88DD-57096E19C9E2}|cpsy200\\cpsy200.csproj|c:\\joy_sem2\\software_analysis\\final_proj\\github\\cpsy200\\cpsy200\\data\\equipmentmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{24AC8499-8D4E-4413-88DD-57096E19C9E2}|cpsy200\\cpsy200.csproj|solutionrelative:cpsy200\\data\\equipmentmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{24AC8499-8D4E-4413-88DD-57096E19C9E2}|cpsy200\\cpsy200.csproj|c:\\joy_sem2\\software_analysis\\final_proj\\github\\cpsy200\\cpsy200\\data\\rentalmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{24AC8499-8D4E-4413-88DD-57096E19C9E2}|cpsy200\\cpsy200.csproj|solutionrelative:cpsy200\\data\\rentalmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{24AC8499-8D4E-4413-88DD-57096E19C9E2}|cpsy200\\cpsy200.csproj|c:\\joy_sem2\\software_analysis\\final_proj\\github\\cpsy200\\cpsy200\\data\\customermanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -93,18 +109,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{24AC8499-8D4E-4413-88DD-57096E19C9E2}|cpsy200\\cpsy200.csproj|c:\\joy_sem2\\software_analysis\\final_proj\\github\\cpsy200\\cpsy200\\components\\_imports.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{24AC8499-8D4E-4413-88DD-57096E19C9E2}|cpsy200\\cpsy200.csproj|solutionrelative:cpsy200\\components\\_imports.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{24AC8499-8D4E-4413-88DD-57096E19C9E2}|cpsy200\\cpsy200.csproj|c:\\joy_sem2\\software_analysis\\final_proj\\github\\cpsy200\\cpsy200\\components\\pages\\removeequipment.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{24AC8499-8D4E-4413-88DD-57096E19C9E2}|cpsy200\\cpsy200.csproj|solutionrelative:cpsy200\\components\\pages\\removeequipment.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{24AC8499-8D4E-4413-88DD-57096E19C9E2}|cpsy200\\cpsy200.csproj|c:\\joy_sem2\\software_analysis\\final_proj\\github\\cpsy200\\cpsy200\\components\\pages\\searchequipment.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{24AC8499-8D4E-4413-88DD-57096E19C9E2}|cpsy200\\cpsy200.csproj|solutionrelative:cpsy200\\components\\pages\\searchequipment.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{24AC8499-8D4E-4413-88DD-57096E19C9E2}|cpsy200\\cpsy200.csproj|c:\\joy_sem2\\software_analysis\\final_proj\\github\\cpsy200\\cpsy200\\components\\pages\\modifyequipment.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{24AC8499-8D4E-4413-88DD-57096E19C9E2}|cpsy200\\cpsy200.csproj|solutionrelative:cpsy200\\components\\pages\\modifyequipment.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{24AC8499-8D4E-4413-88DD-57096E19C9E2}|cpsy200\\cpsy200.csproj|c:\\joy_sem2\\software_analysis\\final_proj\\github\\cpsy200\\cpsy200\\wwwroot\\css\\app.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
@@ -125,244 +129,164 @@
           "SelectedChildIndex": 1,
           "Children": [
             {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Category.cs",
-              "DocumentMoniker": "C:\\Joy_Sem2\\software_analysis\\final_proj\\github\\cpsy200\\cpsy200\\Data\\Category.cs",
-              "RelativeDocumentMoniker": "cpsy200\\Data\\Category.cs",
-              "ToolTip": "C:\\Joy_Sem2\\software_analysis\\final_proj\\github\\cpsy200\\cpsy200\\Data\\Category.cs",
-              "RelativeToolTip": "cpsy200\\Data\\Category.cs",
-              "ViewState": "AgIAAAcAAAAAAAAAAAA1wBAAAAAsAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-25T19:52:37.54Z"
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "AddCategory.razor",
-              "DocumentMoniker": "C:\\Joy_Sem2\\software_analysis\\final_proj\\github\\cpsy200\\cpsy200\\Components\\Pages\\AddCategory.razor",
-              "RelativeDocumentMoniker": "cpsy200\\Components\\Pages\\AddCategory.razor",
-              "ToolTip": "C:\\Joy_Sem2\\software_analysis\\final_proj\\github\\cpsy200\\cpsy200\\Components\\Pages\\AddCategory.razor",
-              "RelativeToolTip": "cpsy200\\Components\\Pages\\AddCategory.razor",
-              "ViewState": "AgIAAD8AAAAAAAAAAAAIwEgAAAAaAAAAAAAAAA==",
+              "Title": "SearchRental.razor",
+              "DocumentMoniker": "C:\\Joy_Sem2\\software_analysis\\final_proj\\github\\cpsy200\\cpsy200\\Components\\Pages\\SearchRental.razor",
+              "RelativeDocumentMoniker": "cpsy200\\Components\\Pages\\SearchRental.razor",
+              "ToolTip": "C:\\Joy_Sem2\\software_analysis\\final_proj\\github\\cpsy200\\cpsy200\\Components\\Pages\\SearchRental.razor",
+              "RelativeToolTip": "cpsy200\\Components\\Pages\\SearchRental.razor",
+              "ViewState": "AgIAAGQAAAAAAAAAAAAAwG8AAAAeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-03-26T01:46:07.646Z",
+              "WhenOpened": "2025-04-01T14:44:53.573Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "AddCustomer.razor",
-              "DocumentMoniker": "C:\\Joy_Sem2\\software_analysis\\final_proj\\github\\cpsy200\\cpsy200\\Components\\Pages\\AddCustomer.razor",
-              "RelativeDocumentMoniker": "cpsy200\\Components\\Pages\\AddCustomer.razor",
-              "ToolTip": "C:\\Joy_Sem2\\software_analysis\\final_proj\\github\\cpsy200\\cpsy200\\Components\\Pages\\AddCustomer.razor",
-              "RelativeToolTip": "cpsy200\\Components\\Pages\\AddCustomer.razor",
-              "ViewState": "AgIAAEYAAAAAAAAAAAAIwDgAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 5,
+              "Title": "AddRental.razor",
+              "DocumentMoniker": "C:\\Joy_Sem2\\software_analysis\\final_proj\\github\\cpsy200\\cpsy200\\Components\\Pages\\AddRental.razor",
+              "RelativeDocumentMoniker": "cpsy200\\Components\\Pages\\AddRental.razor",
+              "ToolTip": "C:\\Joy_Sem2\\software_analysis\\final_proj\\github\\cpsy200\\cpsy200\\Components\\Pages\\AddRental.razor",
+              "RelativeToolTip": "cpsy200\\Components\\Pages\\AddRental.razor",
+              "ViewState": "AgIAAIIAAAAAAAAAAAAjwJIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-03-25T21:13:13.437Z",
+              "WhenOpened": "2025-04-01T14:05:01.249Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "CategoryManager.cs",
-              "DocumentMoniker": "C:\\Joy_Sem2\\software_analysis\\final_proj\\github\\cpsy200\\cpsy200\\Data\\CategoryManager.cs",
-              "RelativeDocumentMoniker": "cpsy200\\Data\\CategoryManager.cs",
-              "ToolTip": "C:\\Joy_Sem2\\software_analysis\\final_proj\\github\\cpsy200\\cpsy200\\Data\\CategoryManager.cs",
-              "RelativeToolTip": "cpsy200\\Data\\CategoryManager.cs",
-              "ViewState": "AgIAABsAAAAAAAAAAAAowEoAAAADAAAAAAAAAA==",
+              "DocumentIndex": 7,
+              "Title": "Customer.cs",
+              "DocumentMoniker": "C:\\Joy_Sem2\\software_analysis\\final_proj\\github\\cpsy200\\cpsy200\\Data\\Customer.cs",
+              "RelativeDocumentMoniker": "cpsy200\\Data\\Customer.cs",
+              "ToolTip": "C:\\Joy_Sem2\\software_analysis\\final_proj\\github\\cpsy200\\cpsy200\\Data\\Customer.cs",
+              "RelativeToolTip": "cpsy200\\Data\\Customer.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAwwCUAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-25T19:52:53.081Z",
+              "WhenOpened": "2025-03-25T21:15:38.441Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 6,
-              "Title": "category_list.csv",
-              "DocumentMoniker": "C:\\Joy_Sem2\\software_analysis\\final_proj\\github\\cpsy200\\cpsy200\\Resources\\Res\\category_list.csv",
-              "RelativeDocumentMoniker": "cpsy200\\Resources\\Res\\category_list.csv",
-              "ToolTip": "C:\\Joy_Sem2\\software_analysis\\final_proj\\github\\cpsy200\\cpsy200\\Resources\\Res\\category_list.csv",
-              "RelativeToolTip": "cpsy200\\Resources\\Res\\category_list.csv",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAABBAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002120|",
-              "WhenOpened": "2025-03-25T20:07:57.365Z"
+              "Title": "RemoveEquipment.razor",
+              "DocumentMoniker": "C:\\Joy_Sem2\\software_analysis\\final_proj\\github\\cpsy200\\cpsy200\\Components\\Pages\\RemoveEquipment.razor",
+              "RelativeDocumentMoniker": "cpsy200\\Components\\Pages\\RemoveEquipment.razor",
+              "ToolTip": "C:\\Joy_Sem2\\software_analysis\\final_proj\\github\\cpsy200\\cpsy200\\Components\\Pages\\RemoveEquipment.razor",
+              "RelativeToolTip": "cpsy200\\Components\\Pages\\RemoveEquipment.razor",
+              "ViewState": "AgIAAFUAAAAAAAAAAAAYwGkAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-25T22:13:13.785Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "AddEquipment.razor",
-              "DocumentMoniker": "C:\\Joy_Sem2\\software_analysis\\final_proj\\github\\cpsy200\\cpsy200\\Components\\Pages\\AddEquipment.razor",
-              "RelativeDocumentMoniker": "cpsy200\\Components\\Pages\\AddEquipment.razor",
-              "ToolTip": "C:\\Joy_Sem2\\software_analysis\\final_proj\\github\\cpsy200\\cpsy200\\Components\\Pages\\AddEquipment.razor",
-              "RelativeToolTip": "cpsy200\\Components\\Pages\\AddEquipment.razor",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-03-25T19:37:51.76Z"
+              "DocumentIndex": 3,
+              "Title": "rental_list.csv",
+              "DocumentMoniker": "C:\\Joy_Sem2\\software_analysis\\final_proj\\github\\cpsy200\\cpsy200\\Resources\\Res\\rental_list.csv",
+              "RelativeDocumentMoniker": "cpsy200\\Resources\\Res\\rental_list.csv",
+              "ToolTip": "C:\\Joy_Sem2\\software_analysis\\final_proj\\github\\cpsy200\\cpsy200\\Resources\\Res\\rental_list.csv",
+              "RelativeToolTip": "cpsy200\\Resources\\Res\\rental_list.csv",
+              "ViewState": "AgIAABoAAAAAAAAAAAAAACwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002120|",
+              "WhenOpened": "2025-03-25T21:47:57.067Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
+              "Title": "Rental.cs",
+              "DocumentMoniker": "C:\\Joy_Sem2\\software_analysis\\final_proj\\github\\cpsy200\\cpsy200\\Data\\Rental.cs",
+              "RelativeDocumentMoniker": "cpsy200\\Data\\Rental.cs",
+              "ToolTip": "C:\\Joy_Sem2\\software_analysis\\final_proj\\github\\cpsy200\\cpsy200\\Data\\Rental.cs",
+              "RelativeToolTip": "cpsy200\\Data\\Rental.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAA6wC4AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-25T21:37:04.036Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "NavMenu.razor",
               "DocumentMoniker": "C:\\Joy_Sem2\\software_analysis\\final_proj\\github\\cpsy200\\cpsy200\\Components\\Layout\\NavMenu.razor",
               "RelativeDocumentMoniker": "cpsy200\\Components\\Layout\\NavMenu.razor",
               "ToolTip": "C:\\Joy_Sem2\\software_analysis\\final_proj\\github\\cpsy200\\cpsy200\\Components\\Layout\\NavMenu.razor",
               "RelativeToolTip": "cpsy200\\Components\\Layout\\NavMenu.razor",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAACQAAAAAAAAAAAAAADYAAABfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-03-25T19:38:00.585Z"
+              "WhenOpened": "2025-03-25T19:38:00.585Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Home.razor",
-              "DocumentMoniker": "C:\\Joy_Sem2\\software_analysis\\final_proj\\github\\cpsy200\\cpsy200\\Components\\Pages\\Home.razor",
-              "RelativeDocumentMoniker": "cpsy200\\Components\\Pages\\Home.razor",
-              "ToolTip": "C:\\Joy_Sem2\\software_analysis\\final_proj\\github\\cpsy200\\cpsy200\\Components\\Pages\\Home.razor",
-              "RelativeToolTip": "cpsy200\\Components\\Pages\\Home.razor",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAACAAAAAAAAAA==",
+              "DocumentIndex": 9,
+              "Title": "AddEquipment.razor",
+              "DocumentMoniker": "C:\\Joy_Sem2\\software_analysis\\final_proj\\github\\cpsy200\\cpsy200\\Components\\Pages\\AddEquipment.razor",
+              "RelativeDocumentMoniker": "cpsy200\\Components\\Pages\\AddEquipment.razor",
+              "ToolTip": "C:\\Joy_Sem2\\software_analysis\\final_proj\\github\\cpsy200\\cpsy200\\Components\\Pages\\AddEquipment.razor",
+              "RelativeToolTip": "cpsy200\\Components\\Pages\\AddEquipment.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADsAAAA3AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-03-25T19:29:52.379Z",
+              "WhenOpened": "2025-03-25T19:37:51.76Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "SearchEquipment.razor",
+              "DocumentMoniker": "C:\\Joy_Sem2\\software_analysis\\final_proj\\github\\cpsy200\\cpsy200\\Components\\Pages\\SearchEquipment.razor",
+              "RelativeDocumentMoniker": "cpsy200\\Components\\Pages\\SearchEquipment.razor",
+              "ToolTip": "C:\\Joy_Sem2\\software_analysis\\final_proj\\github\\cpsy200\\cpsy200\\Components\\Pages\\SearchEquipment.razor",
+              "RelativeToolTip": "cpsy200\\Components\\Pages\\SearchEquipment.razor",
+              "ViewState": "AgIAAHIAAAAAAAAAAAAAwI4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-25T20:49:57.653Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Report.razor",
+              "DocumentMoniker": "C:\\Joy_Sem2\\software_analysis\\final_proj\\github\\cpsy200\\cpsy200\\Components\\Pages\\Report.razor",
+              "RelativeDocumentMoniker": "cpsy200\\Components\\Pages\\Report.razor",
+              "ToolTip": "C:\\Joy_Sem2\\software_analysis\\final_proj\\github\\cpsy200\\cpsy200\\Components\\Pages\\Report.razor",
+              "RelativeToolTip": "cpsy200\\Components\\Pages\\Report.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-25T21:34:24.516Z"
             },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
             },
             {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c64b9c2-e352-428e-a56d-0ace190b99a6}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{40ea2e6b-2121-4bb8-a43e-c83c04b51041}"
+            },
+            {
               "$type": "Document",
               "DocumentIndex": 8,
-              "Title": "customer_list.csv",
-              "DocumentMoniker": "C:\\Joy_Sem2\\software_analysis\\final_proj\\github\\cpsy200\\cpsy200\\Resources\\Res\\customer_list.csv",
-              "RelativeDocumentMoniker": "cpsy200\\Resources\\Res\\customer_list.csv",
-              "ToolTip": "C:\\Joy_Sem2\\software_analysis\\final_proj\\github\\cpsy200\\cpsy200\\Resources\\Res\\customer_list.csv",
-              "RelativeToolTip": "cpsy200\\Resources\\Res\\customer_list.csv",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002120|",
-              "WhenOpened": "2025-03-25T21:13:56.691Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "Customer.cs",
-              "DocumentMoniker": "C:\\Joy_Sem2\\software_analysis\\final_proj\\github\\cpsy200\\cpsy200\\Data\\Customer.cs",
-              "RelativeDocumentMoniker": "cpsy200\\Data\\Customer.cs",
-              "ToolTip": "C:\\Joy_Sem2\\software_analysis\\final_proj\\github\\cpsy200\\cpsy200\\Data\\Customer.cs",
-              "RelativeToolTip": "cpsy200\\Data\\Customer.cs",
-              "ViewState": "AgIAAAoAAAAAAAAAAAA5wBgAAAAQAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-25T21:15:38.441Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "rental_list.csv",
-              "DocumentMoniker": "C:\\Joy_Sem2\\software_analysis\\final_proj\\github\\cpsy200\\cpsy200\\Resources\\Res\\rental_list.csv",
-              "RelativeDocumentMoniker": "cpsy200\\Resources\\Res\\rental_list.csv",
-              "ToolTip": "C:\\Joy_Sem2\\software_analysis\\final_proj\\github\\cpsy200\\cpsy200\\Resources\\Res\\rental_list.csv",
-              "RelativeToolTip": "cpsy200\\Resources\\Res\\rental_list.csv",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAcwCgAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002120|",
-              "WhenOpened": "2025-03-25T21:47:57.067Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "Rental.cs",
-              "DocumentMoniker": "C:\\Joy_Sem2\\software_analysis\\final_proj\\github\\cpsy200\\cpsy200\\Data\\Rental.cs",
-              "RelativeDocumentMoniker": "cpsy200\\Data\\Rental.cs",
-              "ToolTip": "C:\\Joy_Sem2\\software_analysis\\final_proj\\github\\cpsy200\\cpsy200\\Data\\Rental.cs",
-              "RelativeToolTip": "cpsy200\\Data\\Rental.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-25T21:37:04.036Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "equipment_list.csv",
-              "DocumentMoniker": "C:\\Joy_Sem2\\software_analysis\\final_proj\\github\\cpsy200\\cpsy200\\Resources\\Res\\equipment_list.csv",
-              "RelativeDocumentMoniker": "cpsy200\\Resources\\Res\\equipment_list.csv",
-              "ToolTip": "C:\\Joy_Sem2\\software_analysis\\final_proj\\github\\cpsy200\\cpsy200\\Resources\\Res\\equipment_list.csv",
-              "RelativeToolTip": "cpsy200\\Resources\\Res\\equipment_list.csv",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAABnAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002120|",
-              "WhenOpened": "2025-03-25T20:23:07.797Z"
+              "Title": "ModifyEquipment.razor",
+              "DocumentMoniker": "C:\\Joy_Sem2\\software_analysis\\final_proj\\github\\cpsy200\\cpsy200\\Components\\Pages\\ModifyEquipment.razor",
+              "RelativeDocumentMoniker": "cpsy200\\Components\\Pages\\ModifyEquipment.razor",
+              "ToolTip": "C:\\Joy_Sem2\\software_analysis\\final_proj\\github\\cpsy200\\cpsy200\\Components\\Pages\\ModifyEquipment.razor",
+              "RelativeToolTip": "cpsy200\\Components\\Pages\\ModifyEquipment.razor",
+              "ViewState": "AgIAAEoAAAAAAAAAAAAAwGYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-25T20:34:48.508Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 13,
-              "Title": "Equipment.cs",
-              "DocumentMoniker": "C:\\Joy_Sem2\\software_analysis\\final_proj\\github\\cpsy200\\cpsy200\\Data\\Equipment.cs",
-              "RelativeDocumentMoniker": "cpsy200\\Data\\Equipment.cs",
-              "ToolTip": "C:\\Joy_Sem2\\software_analysis\\final_proj\\github\\cpsy200\\cpsy200\\Data\\Equipment.cs",
-              "RelativeToolTip": "cpsy200\\Data\\Equipment.cs",
-              "ViewState": "AgIAAA8AAAAAAAAAAAAUwC4AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-25T19:39:53.35Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "report_list.csv",
-              "DocumentMoniker": "C:\\Joy_Sem2\\software_analysis\\final_proj\\github\\cpsy200\\cpsy200\\Resources\\Res\\report_list.csv",
-              "RelativeDocumentMoniker": "cpsy200\\Resources\\Res\\report_list.csv",
-              "ToolTip": "C:\\Joy_Sem2\\software_analysis\\final_proj\\github\\cpsy200\\cpsy200\\Resources\\Res\\report_list.csv",
-              "RelativeToolTip": "cpsy200\\Resources\\Res\\report_list.csv",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002120|",
-              "WhenOpened": "2025-03-26T01:57:15.097Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "Report.razor",
-              "DocumentMoniker": "C:\\Joy_Sem2\\software_analysis\\final_proj\\github\\cpsy200\\cpsy200\\Components\\Pages\\Report.razor",
-              "RelativeDocumentMoniker": "cpsy200\\Components\\Pages\\Report.razor",
-              "ToolTip": "C:\\Joy_Sem2\\software_analysis\\final_proj\\github\\cpsy200\\cpsy200\\Components\\Pages\\Report.razor",
-              "RelativeToolTip": "cpsy200\\Components\\Pages\\Report.razor",
-              "ViewState": "AgIAAJAAAAAAAAAAAAAowLQAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-03-25T21:34:24.516Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "ReportManager.cs",
-              "DocumentMoniker": "C:\\Joy_Sem2\\software_analysis\\final_proj\\github\\cpsy200\\cpsy200\\Data\\ReportManager.cs",
-              "RelativeDocumentMoniker": "cpsy200\\Data\\ReportManager.cs",
-              "ToolTip": "C:\\Joy_Sem2\\software_analysis\\final_proj\\github\\cpsy200\\cpsy200\\Data\\ReportManager.cs",
-              "RelativeToolTip": "cpsy200\\Data\\ReportManager.cs",
-              "ViewState": "AgIAACYAAAAAAAAAAAAuwEEAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-26T01:55:23.297Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "Report.cs",
-              "DocumentMoniker": "C:\\Joy_Sem2\\software_analysis\\final_proj\\github\\cpsy200\\cpsy200\\Data\\Report.cs",
-              "RelativeDocumentMoniker": "cpsy200\\Data\\Report.cs",
-              "ToolTip": "C:\\Joy_Sem2\\software_analysis\\final_proj\\github\\cpsy200\\cpsy200\\Data\\Report.cs",
-              "RelativeToolTip": "cpsy200\\Data\\Report.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAA5wCAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-26T01:53:34.717Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "SearchCustomer.razor",
-              "DocumentMoniker": "C:\\Joy_Sem2\\software_analysis\\final_proj\\github\\cpsy200\\cpsy200\\Components\\Pages\\SearchCustomer.razor",
-              "RelativeDocumentMoniker": "cpsy200\\Components\\Pages\\SearchCustomer.razor",
-              "ToolTip": "C:\\Joy_Sem2\\software_analysis\\final_proj\\github\\cpsy200\\cpsy200\\Components\\Pages\\SearchCustomer.razor",
-              "RelativeToolTip": "cpsy200\\Components\\Pages\\SearchCustomer.razor",
-              "ViewState": "AgIAAFUAAAAAAAAAAAAYwIcAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-03-25T21:24:59.365Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 19,
               "Title": "EquipmentManager.cs",
               "DocumentMoniker": "C:\\Joy_Sem2\\software_analysis\\final_proj\\github\\cpsy200\\cpsy200\\Data\\EquipmentManager.cs",
               "RelativeDocumentMoniker": "cpsy200\\Data\\EquipmentManager.cs",
@@ -374,19 +298,163 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 10,
+              "Title": "AddCustomer.razor",
+              "DocumentMoniker": "C:\\Joy_Sem2\\software_analysis\\final_proj\\github\\cpsy200\\cpsy200\\Components\\Pages\\AddCustomer.razor",
+              "RelativeDocumentMoniker": "cpsy200\\Components\\Pages\\AddCustomer.razor",
+              "ToolTip": "C:\\Joy_Sem2\\software_analysis\\final_proj\\github\\cpsy200\\cpsy200\\Components\\Pages\\AddCustomer.razor",
+              "RelativeToolTip": "cpsy200\\Components\\Pages\\AddCustomer.razor",
+              "ViewState": "AgIAADEAAAAAAAAAAAAhwEAAAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-25T21:13:13.437Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
               "Title": "RentalManager.cs",
               "DocumentMoniker": "C:\\Joy_Sem2\\software_analysis\\final_proj\\github\\cpsy200\\cpsy200\\Data\\RentalManager.cs",
               "RelativeDocumentMoniker": "cpsy200\\Data\\RentalManager.cs",
               "ToolTip": "C:\\Joy_Sem2\\software_analysis\\final_proj\\github\\cpsy200\\cpsy200\\Data\\RentalManager.cs",
               "RelativeToolTip": "cpsy200\\Data\\RentalManager.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAABAAAAAAAAAAAAAQwCoAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-25T21:37:23.141Z"
             },
             {
               "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "Report.cs",
+              "DocumentMoniker": "C:\\Joy_Sem2\\software_analysis\\final_proj\\github\\cpsy200\\cpsy200\\Data\\Report.cs",
+              "RelativeDocumentMoniker": "cpsy200\\Data\\Report.cs",
+              "ToolTip": "C:\\Joy_Sem2\\software_analysis\\final_proj\\github\\cpsy200\\cpsy200\\Data\\Report.cs",
+              "RelativeToolTip": "cpsy200\\Data\\Report.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAA1wCAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-26T01:53:34.717Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "Home.razor",
+              "DocumentMoniker": "C:\\Joy_Sem2\\software_analysis\\final_proj\\github\\cpsy200\\cpsy200\\Components\\Pages\\Home.razor",
+              "RelativeDocumentMoniker": "cpsy200\\Components\\Pages\\Home.razor",
+              "ToolTip": "C:\\Joy_Sem2\\software_analysis\\final_proj\\github\\cpsy200\\cpsy200\\Components\\Pages\\Home.razor",
+              "RelativeToolTip": "cpsy200\\Components\\Pages\\Home.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-25T19:29:52.379Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "category_list.csv",
+              "DocumentMoniker": "C:\\Joy_Sem2\\software_analysis\\final_proj\\github\\cpsy200\\cpsy200\\Resources\\Res\\category_list.csv",
+              "RelativeDocumentMoniker": "cpsy200\\Resources\\Res\\category_list.csv",
+              "ToolTip": "C:\\Joy_Sem2\\software_analysis\\final_proj\\github\\cpsy200\\cpsy200\\Resources\\Res\\category_list.csv",
+              "RelativeToolTip": "cpsy200\\Resources\\Res\\category_list.csv",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAABBAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002120|",
+              "WhenOpened": "2025-03-25T20:07:57.365Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "CategoryManager.cs",
+              "DocumentMoniker": "C:\\Joy_Sem2\\software_analysis\\final_proj\\github\\cpsy200\\cpsy200\\Data\\CategoryManager.cs",
+              "RelativeDocumentMoniker": "cpsy200\\Data\\CategoryManager.cs",
+              "ToolTip": "C:\\Joy_Sem2\\software_analysis\\final_proj\\github\\cpsy200\\cpsy200\\Data\\CategoryManager.cs",
+              "RelativeToolTip": "cpsy200\\Data\\CategoryManager.cs",
+              "ViewState": "AgIAABsAAAAAAAAAAAAowEoAAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-25T19:52:53.081Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "Category.cs",
+              "DocumentMoniker": "C:\\Joy_Sem2\\software_analysis\\final_proj\\github\\cpsy200\\cpsy200\\Data\\Category.cs",
+              "RelativeDocumentMoniker": "cpsy200\\Data\\Category.cs",
+              "ToolTip": "C:\\Joy_Sem2\\software_analysis\\final_proj\\github\\cpsy200\\cpsy200\\Data\\Category.cs",
+              "RelativeToolTip": "cpsy200\\Data\\Category.cs",
+              "ViewState": "AgIAAAcAAAAAAAAAAAA1wBAAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-25T19:52:37.54Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "customer_list.csv",
+              "DocumentMoniker": "C:\\Joy_Sem2\\software_analysis\\final_proj\\github\\cpsy200\\cpsy200\\Resources\\Res\\customer_list.csv",
+              "RelativeDocumentMoniker": "cpsy200\\Resources\\Res\\customer_list.csv",
+              "ToolTip": "C:\\Joy_Sem2\\software_analysis\\final_proj\\github\\cpsy200\\cpsy200\\Resources\\Res\\customer_list.csv",
+              "RelativeToolTip": "cpsy200\\Resources\\Res\\customer_list.csv",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002120|",
+              "WhenOpened": "2025-03-25T21:13:56.691Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "equipment_list.csv",
+              "DocumentMoniker": "C:\\Joy_Sem2\\software_analysis\\final_proj\\github\\cpsy200\\cpsy200\\Resources\\Res\\equipment_list.csv",
+              "RelativeDocumentMoniker": "cpsy200\\Resources\\Res\\equipment_list.csv",
+              "ToolTip": "C:\\Joy_Sem2\\software_analysis\\final_proj\\github\\cpsy200\\cpsy200\\Resources\\Res\\equipment_list.csv",
+              "RelativeToolTip": "cpsy200\\Resources\\Res\\equipment_list.csv",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAABnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002120|",
+              "WhenOpened": "2025-03-25T20:23:07.797Z"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 21,
+              "Title": "Equipment.cs",
+              "DocumentMoniker": "C:\\Joy_Sem2\\software_analysis\\final_proj\\github\\cpsy200\\cpsy200\\Data\\Equipment.cs",
+              "RelativeDocumentMoniker": "cpsy200\\Data\\Equipment.cs",
+              "ToolTip": "C:\\Joy_Sem2\\software_analysis\\final_proj\\github\\cpsy200\\cpsy200\\Data\\Equipment.cs",
+              "RelativeToolTip": "cpsy200\\Data\\Equipment.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAUwC4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-25T19:39:53.35Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "report_list.csv",
+              "DocumentMoniker": "C:\\Joy_Sem2\\software_analysis\\final_proj\\github\\cpsy200\\cpsy200\\Resources\\Res\\report_list.csv",
+              "RelativeDocumentMoniker": "cpsy200\\Resources\\Res\\report_list.csv",
+              "ToolTip": "C:\\Joy_Sem2\\software_analysis\\final_proj\\github\\cpsy200\\cpsy200\\Resources\\Res\\report_list.csv",
+              "RelativeToolTip": "cpsy200\\Resources\\Res\\report_list.csv",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002120|",
+              "WhenOpened": "2025-03-26T01:57:15.097Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "ReportManager.cs",
+              "DocumentMoniker": "C:\\Joy_Sem2\\software_analysis\\final_proj\\github\\cpsy200\\cpsy200\\Data\\ReportManager.cs",
+              "RelativeDocumentMoniker": "cpsy200\\Data\\ReportManager.cs",
+              "ToolTip": "C:\\Joy_Sem2\\software_analysis\\final_proj\\github\\cpsy200\\cpsy200\\Data\\ReportManager.cs",
+              "RelativeToolTip": "cpsy200\\Data\\ReportManager.cs",
+              "ViewState": "AgIAACYAAAAAAAAAAAAuwEEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-26T01:55:23.297Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "SearchCustomer.razor",
+              "DocumentMoniker": "C:\\Joy_Sem2\\software_analysis\\final_proj\\github\\cpsy200\\cpsy200\\Components\\Pages\\SearchCustomer.razor",
+              "RelativeDocumentMoniker": "cpsy200\\Components\\Pages\\SearchCustomer.razor",
+              "ToolTip": "C:\\Joy_Sem2\\software_analysis\\final_proj\\github\\cpsy200\\cpsy200\\Components\\Pages\\SearchCustomer.razor",
+              "RelativeToolTip": "cpsy200\\Components\\Pages\\SearchCustomer.razor",
+              "ViewState": "AgIAAFUAAAAAAAAAAAAYwIcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-25T21:24:59.365Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
               "Title": "CustomerManager.cs",
               "DocumentMoniker": "C:\\Joy_Sem2\\software_analysis\\final_proj\\github\\cpsy200\\cpsy200\\Data\\CustomerManager.cs",
               "RelativeDocumentMoniker": "cpsy200\\Data\\CustomerManager.cs",
@@ -398,7 +466,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 26,
               "Title": "_Imports.razor",
               "DocumentMoniker": "C:\\Joy_Sem2\\software_analysis\\final_proj\\github\\cpsy200\\cpsy200\\Components\\_Imports.razor",
               "RelativeDocumentMoniker": "cpsy200\\Components\\_Imports.razor",
@@ -410,43 +478,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
-              "Title": "RemoveEquipment.razor",
-              "DocumentMoniker": "C:\\Joy_Sem2\\software_analysis\\final_proj\\github\\cpsy200\\cpsy200\\Components\\Pages\\RemoveEquipment.razor",
-              "RelativeDocumentMoniker": "cpsy200\\Components\\Pages\\RemoveEquipment.razor",
-              "ToolTip": "C:\\Joy_Sem2\\software_analysis\\final_proj\\github\\cpsy200\\cpsy200\\Components\\Pages\\RemoveEquipment.razor",
-              "RelativeToolTip": "cpsy200\\Components\\Pages\\RemoveEquipment.razor",
-              "ViewState": "AgIAAFUAAAAAAAAAAAAYwGkAAAAfAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-03-25T22:13:13.785Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 24,
-              "Title": "SearchEquipment.razor",
-              "DocumentMoniker": "C:\\Joy_Sem2\\software_analysis\\final_proj\\github\\cpsy200\\cpsy200\\Components\\Pages\\SearchEquipment.razor",
-              "RelativeDocumentMoniker": "cpsy200\\Components\\Pages\\SearchEquipment.razor",
-              "ToolTip": "C:\\Joy_Sem2\\software_analysis\\final_proj\\github\\cpsy200\\cpsy200\\Components\\Pages\\SearchEquipment.razor",
-              "RelativeToolTip": "cpsy200\\Components\\Pages\\SearchEquipment.razor",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEUAAAAhAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-03-25T20:49:57.653Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 25,
-              "Title": "ModifyEquipment.razor",
-              "DocumentMoniker": "C:\\Joy_Sem2\\software_analysis\\final_proj\\github\\cpsy200\\cpsy200\\Components\\Pages\\ModifyEquipment.razor",
-              "RelativeDocumentMoniker": "cpsy200\\Components\\Pages\\ModifyEquipment.razor",
-              "ToolTip": "C:\\Joy_Sem2\\software_analysis\\final_proj\\github\\cpsy200\\cpsy200\\Components\\Pages\\ModifyEquipment.razor",
-              "RelativeToolTip": "cpsy200\\Components\\Pages\\ModifyEquipment.razor",
-              "ViewState": "AgIAABgAAAAAAAAAAAAAAGMAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-03-25T20:34:48.508Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 27,
               "Title": "app.css",
               "DocumentMoniker": "C:\\Joy_Sem2\\software_analysis\\final_proj\\github\\cpsy200\\cpsy200\\wwwroot\\css\\app.css",
               "RelativeDocumentMoniker": "cpsy200\\wwwroot\\css\\app.css",
@@ -458,7 +490,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 28,
               "Title": "ModifyCustomer.razor",
               "DocumentMoniker": "C:\\Joy_Sem2\\software_analysis\\final_proj\\github\\cpsy200\\cpsy200\\Components\\Pages\\ModifyCustomer.razor",
               "RelativeDocumentMoniker": "cpsy200\\Components\\Pages\\ModifyCustomer.razor",

@@ -1,0 +1,128 @@
+﻿@page "/search-rental"
+
+<h2 class="form-title">Search Rental</h2>
+
+<div class="form-wrapper">
+    <div class="form-left">
+        <div class="input-row">
+            <label>Enter Criteria:</label>
+            <input type="text" list="rentalList" @bind="SearchKeyword" />
+
+            <datalist id="rentalList">
+                @foreach (var rental in RentalManager.GetRentals())
+                {
+                    var equipment = EquipmentManager.Equipments.FirstOrDefault(e => e.EquipmentID == rental.EquipmentID);
+                    var customer = CustomerManager.Customers.FirstOrDefault(c => c.CustomerID == rental.CustomerID);
+
+                    <option value="@($"{rental.RentalID}")">
+                        @($"{rental.RentalID} - {customer?.Name ?? "Customer"} rented {equipment?.EquipmentName ?? "Equipment"}")
+                    </option>
+                }
+            </datalist>
+        </div>
+
+        <div class="input-row">
+            <label>Rental ID:</label>
+            <input type="text" @bind="SearchRentalID" disabled />
+        </div>
+
+        <div class="input-row">
+            <label>Customer ID:</label>
+            <input type="text" @bind="SearchCustomerID" disabled />
+        </div>
+
+        <div class="input-row">
+            <label>Equipment ID:</label>
+            <input type="text" @bind="SearchEquipmentID" disabled />
+        </div>
+
+        <div class="input-row">
+            <label>Rental Date:</label>
+            <input type="text" @bind="SearchRentalDate" disabled />
+        </div>
+
+        <div class="input-row">
+            <label>Return Date:</label>
+            <input type="text" @bind="SearchReturnDate" disabled />
+        </div>
+
+        <div class="input-row">
+            <label>Status:</label>
+            <input type="text" @bind="SearchStatus" disabled />
+        </div>
+
+        <div class="input-row">
+            <label>Cost of Rental:</label>
+            <input type="text" @bind="SearchCost" disabled />
+        </div>
+    </div>
+
+    <div class="form-right">
+        <label class="notes-label">Notes:</label>
+        <textarea class="notes-box" @bind="SearchNotes" disabled></textarea>
+    </div>
+</div>
+
+<div class="form-buttons">
+    <button class="button" @onclick="UpdateRental">View Rental</button>
+    <button class="button" @onclick="ClearFields">Clear Fields</button>
+    <button class="button" @onclick="GoBack">Back To Home</button>
+</div>
+
+@code {
+    private string SearchKeyword;
+    private string SearchRentalID;
+    private string SearchCustomerID;
+    private string SearchEquipmentID;
+    private string SearchRentalDate;
+    private string SearchReturnDate;
+    private string SearchStatus;
+    private string SearchCost;
+    private string SearchNotes;
+
+    [Inject] private NavigationManager NavigationManager { get; set; }
+
+    private void UpdateRental()
+    {
+        if (!string.IsNullOrWhiteSpace(SearchKeyword))
+        {
+            var rental = RentalManager.GetRentals().FirstOrDefault(r =>
+                r.RentalID.ToString().Contains(SearchKeyword, StringComparison.OrdinalIgnoreCase) ||
+                r.CustomerID.ToString().Contains(SearchKeyword, StringComparison.OrdinalIgnoreCase) ||
+                r.EquipmentID.ToString().Contains(SearchKeyword, StringComparison.OrdinalIgnoreCase));
+
+            if (rental != null)
+            {
+                SearchRentalID = rental.RentalID.ToString();
+                SearchCustomerID = rental.CustomerID.ToString();
+                SearchEquipmentID = rental.EquipmentID.ToString();
+                SearchRentalDate = rental.RentalDate.ToShortDateString();
+                SearchReturnDate = rental.ReturnDate.ToShortDateString();
+                SearchStatus = rental.Status;
+                SearchCost = rental.TotalCost.ToString("C");
+                SearchNotes = rental.Notes;
+            }
+            else
+            {
+                ClearFields();
+            }
+        }
+    }
+
+    private void ClearFields()
+    {
+        SearchRentalID = string.Empty;
+        SearchCustomerID = string.Empty;
+        SearchEquipmentID = string.Empty;
+        SearchRentalDate = string.Empty;
+        SearchReturnDate = string.Empty;
+        SearchStatus = string.Empty;
+        SearchCost = string.Empty;
+        SearchNotes = string.Empty;
+    }
+
+    private void GoBack()
+    {
+        NavigationManager.NavigateTo("/");
+    }
+}

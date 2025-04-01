@@ -59,12 +59,12 @@
     {
         // Simulate adding the category (e.g., add to database or list)
         var category = new Category
-        {
-            CategoryID = int.Parse(CategoryIDText),
-            CategoryName = CategoryName,
-            CategoryDescription = CategoryDescription,
-            Notes = Notes
-        };
+            {
+                CategoryID = int.Parse(CategoryIDText),
+                CategoryName = CategoryName,
+                CategoryDescription = CategoryDescription,
+                Notes = Notes
+            };
 
         CategoryManager.AddCategory(category);  // Assuming CategoryManager is where you store categories
 

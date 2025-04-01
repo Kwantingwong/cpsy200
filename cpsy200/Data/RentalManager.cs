@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.IO;
 
 namespace cpsy200.Data
 {
@@ -28,7 +26,18 @@ namespace cpsy200.Data
             }
         }
 
-        public static List<Rental> GetAll() => Rentals;
-    }
+        public static List<Rental> GetRentals() => Rentals;
 
+        public static void AddRental(Rental rental)
+        {
+            Rentals.Add(rental);
+            SaveRentals();
+        }
+
+        private static void SaveRentals()
+        {
+            var lines = Rentals.Select(r => r.ToCsvLine()).ToList();
+            File.WriteAllLines(filePath, lines);
+        }
+    }
 }

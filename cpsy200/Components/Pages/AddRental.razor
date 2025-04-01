@@ -1,0 +1,204 @@
+﻿@page "/add-rental"
+
+<h2 class="form-title">Add New Rental</h2>
+
+<div class="form-wrapper">
+    <div class="form-left">
+        <div class="input-row">
+            <label>New Generated ID:</label>
+            <input type="text" @bind="RentalIDText" disabled />
+        </div>
+
+        <label>Enter Any of the Following:</label>
+
+        <!-- Equipment ID with search -->
+        <div class="input-row">
+            <label>Search Equipment:</label>
+            <input type="text"
+                   list="equipmentList"
+                   @bind-value="EquipmentSearchKeyword"
+                   @bind-value:event="oninput"
+                   @onblur="UpdateSelectedEquipment" />
+            <datalist id="equipmentList">
+                @foreach (var equipment in EquipmentManager.Equipments)
+                {
+                    <option value="@equipment.EquipmentName">@($"{equipment.EquipmentID} - {equipment.EquipmentName}")</option>
+                }
+            </datalist>
+        </div>
+
+        <div class="input-row">
+            <label>Equipment ID:</label>
+            <input type="text" @bind="EquipmentIDText" disabled />
+        </div>
+
+        <!-- Customer ID with search -->
+        <div class="input-row">
+            <label>Search Customer:</label>
+            <input type="text"
+                   list="customerList"
+                   @bind-value="CustomerSearchKeyword"
+                   @bind-value:event="oninput"
+                   @onblur="UpdateSelectedCustomer" />
+            <datalist id="customerList">
+                @foreach (var customer in CustomerManager.Customers)
+                {
+                    <option value="@customer.Name">@($"{customer.CustomerID} - {customer.Name}")</option>
+                }
+            </datalist>
+        </div>
+
+        <div class="input-row">
+            <label>Customer ID:</label>
+            <input type="text" @bind="CustomerIDText" disabled />
+        </div>
+
+
+
+
+        <div class="input-row">
+            <label>Rental Date:</label>
+            <input type="date" @bind="RentalDate" />
+        </div>
+
+        <div class="input-row">
+            <label>Return Date:</label>
+            <input type="date" @bind="ReturnDate" />
+        </div>
+
+        <div class="input-row">
+            <label>Cost of Rental:</label>
+            <input type="number" step="0.01" @bind="CostOfRental" />
+        </div>
+
+        <div class="input-row">
+            <label>Status:</label>
+            <div>
+                <input type="radio" id="rented" name="status" value="Rented" checked="@(Status == "Rented")" @onchange="e => Status = e.Value.ToString()" />
+                <label for="rented">Rented</label>
+                <input type="radio" id="returned" name="status" value="Returned" checked="@(Status == "Returned")" @onchange="e => Status = e.Value.ToString()" />
+                <label for="returned">Returned (Available)</label>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-right">
+        <label>Notes:</label>
+        <textarea @bind="Notes" class="notes-box">
+System will automatically modify the following information based on the updated status (Rented / Returned):
+- Condition: Used
+- Location: In Use / Storage
+
+Add more notes if needed:
+        </textarea>
+    </div>
+</div>
+
+<div class="form-buttons">
+    <button class="button" @onclick="SubmitRental">Add</button>
+    <button class="button" @onclick="GoBack">Back To Home</button>
+</div>
+
+@if (showSuccess)
+{
+        <p class="text-success">✅ Rental added!</p>
+}
+
+@code {
+    private string RentalIDText;
+    private int EquipmentID;
+    private int CustomerID;
+    private DateTime RentalDate = DateTime.Today;
+    private DateTime ReturnDate = DateTime.Today;
+    private decimal CostOfRental;
+    private string Status = "Rented";
+    private string Notes = string.Empty;
+    private bool showSuccess = false;
+
+    private string EquipmentSearchKeyword = string.Empty;
+    private string EquipmentIDText = string.Empty;
+    private string CustomerSearchKeyword = string.Empty;
+    private string CustomerIDText = string.Empty;
+
+
+    [Inject] private NavigationManager NavigationManager { get; set; }
+
+    private void UpdateSelectedEquipment()
+    {
+        var match = EquipmentManager.Equipments.FirstOrDefault(eq =>
+            eq.EquipmentName.Equals(EquipmentSearchKeyword, StringComparison.OrdinalIgnoreCase));
+
+        if (match != null)
+        {
+            EquipmentID = match.EquipmentID;
+            EquipmentIDText = EquipmentID.ToString();
+        }
+        else
+        {
+            EquipmentID = 0;
+            EquipmentIDText = string.Empty;
+        }
+    }
+
+    private void UpdateSelectedCustomer()
+    {
+        var match = CustomerManager.Customers.FirstOrDefault(c =>
+        c.Name.Equals(CustomerSearchKeyword, StringComparison.OrdinalIgnoreCase));
+
+        if (match != null)
+        {
+            CustomerID = match.CustomerID;
+            CustomerIDText = CustomerID.ToString();
+        }
+        else
+        {
+            CustomerID = 0;
+            CustomerIDText = string.Empty;
+        }
+    }
+
+    protected override void OnInitialized()
+    {
+        GenerateNextRentalID();
+    }
+
+    private void GoBack()
+    {
+        NavigationManager.NavigateTo("/");
+    }
+
+    private void SubmitRental()
+    {
+        var rental = new cpsy200.Data.Rental
+            {
+                RentalID = int.Parse(RentalIDText),
+                EquipmentID = EquipmentID,
+                CustomerID = CustomerID,
+                RentalDate = RentalDate,
+                ReturnDate = ReturnDate,
+                CostOfRental = CostOfRental,
+                TotalCost = CostOfRental,
+                Status = Status,
+                Notes = Notes
+            };
+
+        cpsy200.Data.RentalManager.AddRental(rental);
+
+        GenerateNextRentalID();
+        EquipmentID = 0;
+        CustomerID = 0;
+        RentalDate = DateTime.Today;
+        ReturnDate = DateTime.Today;
+        CostOfRental = 0;
+        Status = "Rented";
+        Notes = string.Empty;
+        showSuccess = true;
+    }
+
+    private void GenerateNextRentalID()
+    {
+        var allRentals = cpsy200.Data.RentalManager.GetRentals();
+        int maxId = allRentals.Count > 0 ? allRentals.Max(r => r.RentalID) : 999;
+        RentalIDText = (maxId + 1).ToString();
+    }
+}

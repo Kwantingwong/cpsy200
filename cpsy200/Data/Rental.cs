@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace cpsy200.Data
 {
@@ -15,6 +11,8 @@ namespace cpsy200.Data
         public DateTime ReturnDate { get; set; }
         public decimal CostOfRental { get; set; }
         public decimal TotalCost { get; set; }
+        public string Status { get; set; } // Added for the form
+        public string Notes { get; set; }  // Added for the form
 
         public Rental(string csvLine)
         {
@@ -26,12 +24,24 @@ namespace cpsy200.Data
             ReturnDate = DateTime.Parse(parts[4]);
             CostOfRental = decimal.Parse(parts[5]);
             TotalCost = decimal.Parse(parts[6]);
+            Status = parts.Length > 7 ? parts[7] : "Rented"; // Default to "Rented" if not present
+            Notes = parts.Length > 8 ? parts[8] : string.Empty; // Default to empty if not present
+        }
+
+        public Rental()
+        {
+            // Parameterless constructor for creating new rentals
         }
 
         public override string ToString()
         {
             return $"{RentalDate:yyyy-MM-dd} | RentalID: {RentalID}, CustomerID: {CustomerID}, EquipmentID: {EquipmentID}, Total: ${TotalCost}";
         }
-    }
 
+        // Method to convert the rental to a CSV line
+        public string ToCsvLine()
+        {
+            return $"{RentalID},{CustomerID},{EquipmentID},{RentalDate:yyyy-MM-dd},{ReturnDate:yyyy-MM-dd},{CostOfRental},{TotalCost},{Status},{Notes}";
+        }
+    }
 }
