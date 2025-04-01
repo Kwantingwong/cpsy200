@@ -27,10 +27,15 @@ namespace cpsy200.Data
         // Method to save report to the CSV file
         private static void SaveReportToCSV(Report report)
         {
-            // Open the CSV file to append the new report
+            // Escape newlines and quotes in content
+            string escapedContent = report.Content
+                .Replace("\"", "\"\"")          // Escape double quotes
+                .Replace("\r\n", "\n")          // Normalize newlines
+                .Replace("\n", "\\n");          // Encode newlines
+
             using (var writer = new StreamWriter(reportFilePath, append: true))
             {
-                writer.WriteLine($"{report.ReportID},{report.GeneratedDate:yyyy-MM-dd HH:mm:ss},{report.ReportType},{report.Name},{report.Content}");
+                writer.WriteLine($"{report.ReportID},{report.GeneratedDate:yyyy-MM-dd HH:mm:ss},{report.ReportType},{report.Name},\"{escapedContent}\"");
             }
         }
 
@@ -41,19 +46,21 @@ namespace cpsy200.Data
 
             if (File.Exists(reportFilePath))
             {
-                var lines = File.ReadLines(reportFilePath).Skip(1); // Skip header line
+                var lines = File.ReadLines(reportFilePath); // No longer skipping header
 
                 foreach (var line in lines)
                 {
-                    var parts = line.Split(',');
+                    var parts = SplitCsvLine(line);
+                    if (parts.Count < 5) continue;
 
                     int reportID = int.Parse(parts[0]);
                     DateTime generatedDate = DateTime.Parse(parts[1]);
                     string reportType = parts[2];
                     string name = parts[3];
-                    string content = parts[4];
+                    string content = parts[4]
+                        .Replace("\\n", "\n")
+                        .Replace("\"\"", "\"");
 
-                    // Create a new Report object with all the parsed fields
                     var report = new Report(reportID, 1, reportType, generatedDate, content, name);
                     reports.Add(report);
                 }
@@ -61,5 +68,77 @@ namespace cpsy200.Data
 
             return reports;
         }
+
+        // Handles quoted CSV fields
+        private static List<string> SplitCsvLine(string line)
+        {
+            var result = new List<string>();
+            bool inQuotes = false;
+            string current = "";
+
+            for (int i = 0; i < line.Length; i++)
+            {
+                char c = line[i];
+
+                if (c == '"')
+                {
+                    if (inQuotes && i + 1 < line.Length && line[i + 1] == '"')
+                    {
+                        current += '"';
+                        i++;
+                    }
+                    else
+                    {
+                        inQuotes = !inQuotes;
+                    }
+                }
+                else if (c == ',' && !inQuotes)
+                {
+                    result.Add(current);
+                    current = "";
+                }
+                else
+                {
+                    current += c;
+                }
+            }
+
+            result.Add(current);
+            return result;
+        }
+
+        public static void UpdateReport(Report updatedReport)
+        {
+            var reports = GetReports();
+            var index = reports.FindIndex(r => r.ReportID == updatedReport.ReportID);
+            if (index != -1)
+            {
+                reports[index] = updatedReport;
+                RewriteAllReports(reports);
+            }
+        }
+
+        public static void DeleteReport(int reportID)
+        {
+            var reports = GetReports().Where(r => r.ReportID != reportID).ToList();
+            RewriteAllReports(reports);
+        }
+
+        private static void RewriteAllReports(List<Report> reports)
+        {
+            using (var writer = new StreamWriter(reportFilePath, false))
+            {
+                foreach (var report in reports)
+                {
+                    string escapedContent = report.Content
+                        .Replace("\"", "\"\"")
+                        .Replace("\r\n", "\n")
+                        .Replace("\n", "\\n");
+
+                    writer.WriteLine($"{report.ReportID},{report.GeneratedDate:yyyy-MM-dd HH:mm:ss},{report.ReportType},{report.Name},\"{escapedContent}\"");
+                }
+            }
+        }
+
     }
 }

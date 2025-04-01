@@ -1,1 +1,227 @@
-﻿
+﻿@page "/view-reports"
+@using System.Text
+@using cpsy200.Data
+@using DataReport = cpsy200.Data.Report
+
+
+<h2 class="form-title">View Reports</h2>
+
+<div class="form-wrapper" style="display: flex; gap: 30px;">
+    <!-- Left Panel -->
+    <div style="flex: 1;">
+        <div class="input-row padded">
+            <label>Report Type:</label>
+            <select @bind="SelectedReportType" @bind:after="OnReportTypeChanged">
+                <option value="SalesByDate">Sales by Date</option>
+                <option value="SalesByCustomer">Sales by Customer</option>
+                <option value="ItemsByCategory">Items by Category</option>
+            </select>
+        </div>
+
+        <div class="input-row padded">
+            <label>Filter:</label>
+            <select @bind="SelectedFilter">
+                <option value="All">All</option>
+                @if (SelectedReportType == "SalesByCustomer")
+                {
+                    @foreach (var customer in CustomerManager.Customers ?? new List<Customer>())
+                    {
+                        <option value="@customer.CustomerID">@($"{customer.CustomerID} - {customer.Name}")</option>
+                    }
+                }
+                else if (SelectedReportType == "ItemsByCategory")
+                {
+                    @foreach (var category in CategoryManager.GetCategories() ?? new List<Category>())
+                    {
+                        <option value="@category.CategoryID">@($"{category.CategoryID} - {category.CategoryName}")</option>
+                    }
+                }
+                else if (SelectedReportType == "SalesByDate")
+                {
+                    @foreach (var date in UniqueRentalDates)
+                    {
+                        <option value="@date.ToString("yyyy-MM-dd")">@date.ToString("yyyy-MM-dd")</option>
+                    }
+                }
+            </select>
+        </div>
+
+        <div class="form-buttons">
+            <button class="button" @onclick="GenerateSelectedReport">Generate Report</button>
+        </div>
+
+        <div class="input-row padded" style="margin-top: 40px;">
+            <label>View Previous Report:</label>
+            <select @bind="SelectedReportID">
+                <option value="">-- Select Report --</option>
+                @foreach (var report in SavedReports)
+                {
+                    <option value="@report.ReportID">@($"{report.ReportID} - {report.ReportType} ({report.Name})")</option>
+                }
+            </select>
+        </div>
+
+        <div class="form-buttons">
+            <button class="button" @onclick="LoadReport">Load</button>
+            <button class="button" @onclick="SaveReport" disabled="@(!IsReportSelected)">Save</button>
+            <button class="button" @onclick="DeleteReport" disabled="@(!IsReportSelected)">Delete</button>
+        </div>
+    </div>
+
+    <!-- Right Panel: Report Viewer -->
+    <div style="flex: 2;">
+        <label><strong>Report</strong></label>
+        <textarea style="width: 100%; height: 400px;" @bind="ReportContent"></textarea>
+    </div>
+</div>
+
+<div class="form-buttons">
+    <button class="button" @onclick="GoBack">Back To Home</button>
+</div>
+
+@code {
+    private string SelectedReportType = "SalesByDate";
+    private string SelectedFilter = "All";
+    private string ReportContent;
+    private List<DateTime> UniqueRentalDates = new();
+
+    private List<DataReport> SavedReports = new();
+    private DataReport SelectedSavedReport;
+
+    private string SelectedReportID = "";
+
+    private bool IsReportSelected => SelectedSavedReport != null;
+
+    [Inject] private NavigationManager NavigationManager { get; set; }
+
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+        OnReportTypeChanged();
+        SavedReports = ReportManager.GetReports();
+    }
+
+    private void GoBack() => NavigationManager.NavigateTo("/");
+
+    private void OnReportTypeChanged()
+    {
+        SelectedFilter = "All";
+
+        if (SelectedReportType == "SalesByDate")
+        {
+            UniqueRentalDates = RentalManager.GetRentals()
+                ?.Select(r => r.RentalDate.Date)
+                .Distinct()
+                .OrderBy(d => d)
+                .ToList() ?? new List<DateTime>();
+        }
+    }
+
+    private void GenerateSelectedReport()
+    {
+        try
+        {
+            var rentals = RentalManager.GetRentals() ?? new List<Rental>();
+            var customers = CustomerManager.Customers ?? new List<Customer>();
+            var equipmentList = EquipmentManager.Equipments ?? new List<Equipment>();
+            var categories = CategoryManager.GetCategories() ?? new List<Category>();
+
+            var report = new StringBuilder();
+            string reportName = SelectedFilter == "All" ? "All" : SelectedFilter;
+
+            if (SelectedReportType == "SalesByDate")
+            {
+                var grouped = rentals.GroupBy(r => r.RentalDate.Date).OrderBy(g => g.Key);
+
+                report.AppendLine("📅 Sales by Date");
+                report.AppendLine("------------------");
+
+                foreach (var group in grouped)
+                {
+                    if (SelectedFilter != "All" && group.Key.ToString("yyyy-MM-dd") != SelectedFilter)
+                        continue;
+
+                    decimal total = group.Sum(r => r.TotalCost);
+                    report.AppendLine($"{group.Key:yyyy-MM-dd}: ${total:F2} ({group.Count()} rentals)");
+                }
+            }
+            else if (SelectedReportType == "SalesByCustomer")
+            {
+                var grouped = rentals.GroupBy(r => r.CustomerID).OrderBy(g => g.Key);
+
+                report.AppendLine("👤 Sales by Customer");
+                report.AppendLine("----------------------");
+
+                foreach (var group in grouped)
+                {
+                    if (SelectedFilter != "All" && group.Key.ToString() != SelectedFilter)
+                        continue;
+
+                    var customer = customers.FirstOrDefault(c => c.CustomerID == group.Key);
+                    var name = customer != null ? customer.Name : $"Customer #{group.Key}";
+                    decimal total = group.Sum(r => r.TotalCost);
+                    report.AppendLine($"{name} (ID: {group.Key}) - ${total:F2} from {group.Count()} rentals");
+                }
+            }
+            else if (SelectedReportType == "ItemsByCategory")
+            {
+                var grouped = rentals.Join(equipmentList,
+                                            rental => rental.EquipmentID,
+                                            equipment => equipment.EquipmentID,
+                                            (rental, equipment) => new { rental, equipment.CategoryID })
+                                      .GroupBy(x => x.CategoryID)
+                                      .OrderBy(g => g.Key);
+
+                report.AppendLine("📦 Items Rented by Category");
+                report.AppendLine("----------------------------");
+
+                foreach (var group in grouped)
+                {
+                    if (SelectedFilter != "All" && group.Key.ToString() != SelectedFilter)
+                        continue;
+
+                    var category = categories.FirstOrDefault(c => c.CategoryID == group.Key);
+                    var name = category != null ? category.CategoryName : $"Category #{group.Key}";
+                    report.AppendLine($"{name} - {group.Count()} rentals");
+                }
+            }
+
+            ReportManager.GenerateAndSaveReport(SelectedReportType, reportName, report.ToString());
+            ReportContent = report.ToString();
+            SavedReports = ReportManager.GetReports();
+        }
+        catch (Exception ex)
+        {
+            ReportContent = $"❌ Error generating report:\n{ex.Message}";
+        }
+    }
+
+    private void LoadReport()
+    {
+        if (int.TryParse(SelectedReportID, out int id))
+        {
+            SelectedSavedReport = SavedReports.FirstOrDefault(r => r.ReportID == id);
+            ReportContent = SelectedSavedReport?.Content;
+        }
+    }
+
+    private void SaveReport()
+    {
+        if (SelectedSavedReport == null) return;
+
+        SelectedSavedReport.Content = ReportContent;
+        ReportManager.UpdateReport(SelectedSavedReport);
+        SavedReports = ReportManager.GetReports();
+    }
+
+    private void DeleteReport()
+    {
+        if (SelectedSavedReport == null) return;
+
+        ReportManager.DeleteReport(SelectedSavedReport.ReportID);
+        ReportContent = "";
+        SelectedSavedReport = null;
+        SelectedReportID = "";
+        SavedReports = ReportManager.GetReports();
+    }
+}

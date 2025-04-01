@@ -1,6 +1,6 @@
 1001,1,Drill Machine,Electric drill with 500W,Rented,Used,Rented Out,15,Here is some notesssss
 1002,2,Lawn Mower,Petrol lawn mower,Removed - For Sale,Used,Scrap Area,40,i am removing this to the scrap area
-1003,1,Power Washer,High pressure washer,Removed - For Sale,Used - Working,Selling Area,30,This is note
+1003,1,Power Washer,High pressure washer,Rented,Used,Rented Out,30,This is note
 8101,3,Vacuum Cleaner,High-power vacuum cleaner,Rented,Used,Rented Out,25,Cleans carpets efficiently
 8122,3,Pressure Cleaner,Heavy-duty pressure cleaner for outdoor use,Available,Used,Selling Area,75,Good for cleaning large surfaces
 7654,2,Chainsaw,Gas-powered chainsaw for cutting wood,Available,Used,Storage,60,Used for heavy-duty cutting
@@ -24,7 +24,7 @@
 2749,6,Shredder,Paper shredder for office use,Available,Used,Selling Area,35,Perfect for handling sensitive information
 5401,6,Scanner,High-speed document scanner,Available,Used,Storage,50,Used for scanning large documents
 7842,7,Microwave,Compact microwave for daily use,Available,New,Storage,60,Perfect for small kitchens
-9736,7,Refrigerator,Large refrigerator with multiple compartments,Available,New,Storage,200,Efficient and spacious
+9736,7,Refrigerator,Large refrigerator with multiple compartments,Rented,Used,Rented Out,200,Efficient and spacious
 2157,7,Iron,Electric iron for clothes,Available,Used,Selling Area,25,Good for quick ironing sessions
 9328,8,Tire Changer,Heavy-duty tire changer,Available,New,Storage,150,Used for tire maintenance
 2836,8,Oil Filter,Tool used to remove oil filters,Available,Used,Storage,30,Used in vehicle servicing
