@@ -1,6 +1,6 @@
 ﻿@page "/add-rental"
 
-<h2 class="form-title">Add New Rental</h2>
+<h2 class="form-title">Add Rental</h2>
 
 <div class="form-wrapper">
     <div class="form-left">
@@ -68,18 +68,16 @@
 
         <div class="input-row">
             <label>Cost of Rental:</label>
-            <input type="number" step="0.01" @bind="CostOfRental" />
+            <input type="number" step="5" @bind="CostOfRental" />
         </div>
 
-        <div class="input-row">
+       <div class="input-row">
             <label>Status:</label>
-            <div>
-                <input type="radio" id="rented" name="status" value="Rented" checked="@(Status == "Rented")" @onchange="e => Status = e.Value.ToString()" />
-                <label for="rented">Rented</label>
-                <input type="radio" id="returned" name="status" value="Returned" checked="@(Status == "Returned")" @onchange="e => Status = e.Value.ToString()" />
-                <label for="returned">Returned (Available)</label>
-            </div>
+            <input type="text" @bind="Status" disabled />
         </div>
+
+
+
     </div>
 
     <div class="form-right">
@@ -103,6 +101,10 @@ Add more notes if needed:
 {
         <p class="text-success">✅ Rental added!</p>
 }
+@if (!string.IsNullOrEmpty(errorMessage))
+{
+    <p class="text-danger">@errorMessage</p>
+}
 
 @code {
     private string RentalIDText;
@@ -119,6 +121,8 @@ Add more notes if needed:
     private string EquipmentIDText = string.Empty;
     private string CustomerSearchKeyword = string.Empty;
     private string CustomerIDText = string.Empty;
+    private string errorMessage = string.Empty;
+
 
 
     [Inject] private NavigationManager NavigationManager { get; set; }
@@ -159,8 +163,10 @@ Add more notes if needed:
 
     protected override void OnInitialized()
     {
-        GenerateNextRentalID();
+        GenerateRandomRentalID();
     }
+
+
 
     private void GoBack()
     {
@@ -169,6 +175,25 @@ Add more notes if needed:
 
     private void SubmitRental()
     {
+
+        var existingRental = cpsy200.Data.RentalManager.GetRentals()
+            .FirstOrDefault(r => r.EquipmentID == EquipmentID && r.Status == "Rented");
+      
+        if (existingRental != null)
+        {
+            var matchedEquipment = EquipmentManager.Equipments.FirstOrDefault(e => e.EquipmentID == EquipmentID);
+            string equipmentName = matchedEquipment?.EquipmentName ?? "Unknown";
+
+            errorMessage = $"⚠️ Equipment '{equipmentName}' (ID: {EquipmentID}) is already rented (Rental ID: {existingRental.RentalID}) and must be returned before renting again.";
+            showSuccess = false;
+            return;
+        }
+
+        else
+        {
+            errorMessage = string.Empty;
+        }
+
         var rental = new cpsy200.Data.Rental
             {
                 RentalID = int.Parse(RentalIDText),
@@ -182,23 +207,58 @@ Add more notes if needed:
                 Notes = Notes
             };
 
+        // Save rental
         cpsy200.Data.RentalManager.AddRental(rental);
 
-        GenerateNextRentalID();
+        // Update Equipment Info and Save Equipment CSV
+        var equipment = EquipmentManager.Equipments.FirstOrDefault(eq => eq.EquipmentID == EquipmentID);
+        if (equipment != null)
+        {
+            if (Status == "Rented")
+            {
+                equipment.Condition = "Used";
+                equipment.Location = "Rented Out";
+                equipment.Status = "Rented";
+            }
+            else if (Status == "Returned")
+            {
+                equipment.Status = "Available";
+                equipment.Location = "Storage";
+            }
+
+            EquipmentManager.SaveEquipments();
+        }
+
+        showSuccess = true;
+
+        // Clear form
+        GenerateRandomRentalID();
         EquipmentID = 0;
+        EquipmentIDText = string.Empty;
+        EquipmentSearchKeyword = string.Empty;
+
         CustomerID = 0;
+        CustomerIDText = string.Empty;
+        CustomerSearchKeyword = string.Empty;
+
         RentalDate = DateTime.Today;
         ReturnDate = DateTime.Today;
         CostOfRental = 0;
         Status = "Rented";
         Notes = string.Empty;
-        showSuccess = true;
     }
 
-    private void GenerateNextRentalID()
+    private void GenerateRandomRentalID()
     {
-        var allRentals = cpsy200.Data.RentalManager.GetRentals();
-        int maxId = allRentals.Count > 0 ? allRentals.Max(r => r.RentalID) : 999;
-        RentalIDText = (maxId + 1).ToString();
+        var existingIDs = cpsy200.Data.RentalManager.GetRentals().Select(r => r.RentalID).ToHashSet();
+        var random = new Random();
+        int newID;
+
+        do
+        {
+            newID = random.Next(1000, 9999); // 4-digit ID
+        } while (existingIDs.Contains(newID)); // Ensure it's unique
+
+        RentalIDText = newID.ToString();
     }
 }

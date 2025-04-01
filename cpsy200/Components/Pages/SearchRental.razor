@@ -66,6 +66,7 @@
 <div class="form-buttons">
     <button class="button" @onclick="UpdateRental">View Rental</button>
     <button class="button" @onclick="ClearFields">Clear Fields</button>
+    <button class="button" @onclick="GoToModifyRentalPage" disabled="@string.IsNullOrEmpty(SearchRentalID)">Modify Rental</button>   
     <button class="button" @onclick="GoBack">Back To Home</button>
 </div>
 
@@ -120,6 +121,15 @@
         SearchCost = string.Empty;
         SearchNotes = string.Empty;
     }
+
+    private void GoToModifyRentalPage()
+    {
+        if (!string.IsNullOrEmpty(SearchRentalID))
+        {
+            NavigationManager.NavigateTo($"/modify-rental/{SearchRentalID}");
+        }
+    }
+
 
     private void GoBack()
     {

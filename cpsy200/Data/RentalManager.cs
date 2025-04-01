@@ -34,7 +34,7 @@ namespace cpsy200.Data
             SaveRentals();
         }
 
-        private static void SaveRentals()
+        public static void SaveRentals()
         {
             var lines = Rentals.Select(r => r.ToCsvLine()).ToList();
             File.WriteAllLines(filePath, lines);

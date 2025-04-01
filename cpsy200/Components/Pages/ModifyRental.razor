@@ -1,0 +1,143 @@
+﻿@page "/modify-rental/{RentalID:int}"
+
+<h2 class="form-title">Modify Rental</h2>
+
+<div class="form-wrapper">
+    <div class="form-left">
+        <div class="input-row">
+            <label>Rental ID:</label>
+            <input type="text" @bind="RentalIDText" disabled />
+        </div>
+
+        <div class="input-row">
+            <label>Equipment ID:</label>
+            <input type="text" @bind="EquipmentIDText" disabled />
+        </div>
+
+        <div class="input-row">
+            <label>Customer ID:</label>
+            <input type="text" @bind="CustomerIDText" disabled />
+        </div>
+
+        <div class="input-row">
+            <label>Rental Date:</label>
+            <input type="date" @bind="RentalDate" />
+        </div>
+
+        <div class="input-row">
+            <label>Return Date:</label>
+            <input type="date" @bind="ReturnDate" />
+        </div>
+
+        <div class="input-row">
+            <label>Cost of Rental:</label>
+            <input type="number" step="0.01" @bind="CostOfRental" />
+        </div>
+
+        <div class="input-row">
+            <label>Status:</label>
+            <select @bind="Status">
+                <option value="Rented">Rented</option>
+                <option value="Returned">Returned</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="form-right">
+        <label>Notes:</label>
+        <textarea class="notes-box" @bind="Notes"></textarea>
+    </div>
+</div>
+
+<div class="form-buttons">
+    <button class="button" @onclick="SaveChanges">Save Changes</button>
+    <button class="button" @onclick="GoBack">Back To Home</button>
+</div>
+
+@if (showSuccess)
+{
+        <p class="text-success">✅ Rental updated!</p>
+}
+
+@code {
+    [Parameter] public int RentalID { get; set; }
+
+    private string RentalIDText;
+    private string EquipmentIDText;
+    private string CustomerIDText;
+    private DateTime RentalDate;
+    private DateTime ReturnDate;
+    private decimal CostOfRental;
+    private string Status;
+    private string Notes;
+    private bool showSuccess = false;
+
+    [Inject] private NavigationManager NavigationManager { get; set; }
+
+    protected override void OnInitialized()
+    {
+        var rental = RentalManager.GetRentals().FirstOrDefault(r => r.RentalID == RentalID);
+
+        if (rental != null)
+        {
+            RentalIDText = rental.RentalID.ToString();
+            EquipmentIDText = rental.EquipmentID.ToString();
+            CustomerIDText = rental.CustomerID.ToString();
+            RentalDate = rental.RentalDate;
+            ReturnDate = rental.ReturnDate;
+            CostOfRental = rental.CostOfRental;
+            Status = rental.Status;
+            Notes = rental.Notes;
+        }
+        else
+        {
+            NavigationManager.NavigateTo("/");
+        }
+    }
+
+    private void SaveChanges()
+    {
+        var rental = RentalManager.GetRentals().FirstOrDefault(r => r.RentalID == RentalID);
+
+        if (rental != null)
+        {
+            rental.RentalDate = RentalDate;
+            rental.ReturnDate = ReturnDate;
+            rental.CostOfRental = CostOfRental;
+            rental.TotalCost = CostOfRental; // or adjust with logic if needed
+            rental.Status = Status;
+            rental.Notes = Notes;
+
+            RentalManager.SaveRentals();
+
+            // Update Equipment Info and Save Equipment CSV
+            if (int.TryParse(EquipmentIDText, out int equipmentId))
+            {
+                var equipment = EquipmentManager.Equipments.FirstOrDefault(eq => eq.EquipmentID == equipmentId);
+                if (equipment != null)
+                {
+                    if (Status == "Rented")
+                    {
+                        equipment.Condition = "Used";
+                        equipment.Location = "Rented Out";
+                        equipment.Status = "Rented";
+                    }
+                    else if (Status == "Returned")
+                    {
+                        equipment.Status = "Available";
+                        equipment.Location = "Storage";
+                    }
+
+                    EquipmentManager.SaveEquipments();
+                }
+            }
+
+            showSuccess = true;
+        }
+    }
+
+    private void GoBack()
+    {
+        NavigationManager.NavigateTo("/");
+    }
+}
