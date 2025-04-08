@@ -58,6 +58,10 @@
 {
         <p class="text-success">✅ Rental updated!</p>
 }
+@if (!string.IsNullOrEmpty(errorMessage))
+{
+    <p class="text-danger">@errorMessage</p>
+}
 
 @code {
     [Parameter] public int RentalID { get; set; }
@@ -71,6 +75,7 @@
     private string Status;
     private string Notes;
     private bool showSuccess = false;
+    private string errorMessage;
 
     [Inject] private NavigationManager NavigationManager { get; set; }
 
@@ -97,44 +102,59 @@
 
     private void SaveChanges()
     {
-        var rental = RentalManager.GetRentals().FirstOrDefault(r => r.RentalID == RentalID);
-
-        if (rental != null)
+        try
         {
-            rental.RentalDate = RentalDate;
-            rental.ReturnDate = ReturnDate;
-            rental.CostOfRental = CostOfRental;
-            rental.TotalCost = CostOfRental; // or adjust with logic if needed
-            rental.Status = Status;
-            rental.Notes = Notes;
+            var rental = RentalManager.GetRentals().FirstOrDefault(r => r.RentalID == RentalID);
 
-            RentalManager.SaveRentals();
-
-            // Update Equipment Info and Save Equipment CSV
-            if (int.TryParse(EquipmentIDText, out int equipmentId))
+            if (rental != null)
             {
-                var equipment = EquipmentManager.Equipments.FirstOrDefault(eq => eq.EquipmentID == equipmentId);
-                if (equipment != null)
+                rental.RentalDate = RentalDate;
+                rental.ReturnDate = ReturnDate;
+                rental.CostOfRental = CostOfRental;
+                rental.TotalCost = CostOfRental; // Or apply additional calculation logic
+                rental.Status = Status;
+                rental.Notes = Notes;
+
+                RentalManager.SaveRentals();
+
+                // Update Equipment Info and Save Equipment CSV
+                if (int.TryParse(EquipmentIDText, out int equipmentId))
                 {
-                    if (Status == "Rented")
+                    var equipment = EquipmentManager.Equipments.FirstOrDefault(eq => eq.EquipmentID == equipmentId);
+                    if (equipment != null)
                     {
-                        equipment.Condition = "Used";
-                        equipment.Location = "Rented Out";
-                        equipment.Status = "Rented";
-                    }
-                    else if (Status == "Returned")
-                    {
-                        equipment.Status = "Available";
-                        equipment.Location = "Storage";
-                    }
+                        if (Status == "Rented")
+                        {
+                            equipment.Condition = "Used";
+                            equipment.Location = "Rented Out";
+                            equipment.Status = "Rented";
+                        }
+                        else if (Status == "Returned")
+                        {
+                            equipment.Status = "Available";
+                            equipment.Location = "Storage";
+                        }
 
-                    EquipmentManager.SaveEquipments();
+                        EquipmentManager.SaveEquipments();
+                    }
                 }
-            }
 
-            showSuccess = true;
+                showSuccess = true;
+                errorMessage = string.Empty;
+            }
+            else
+            {
+                errorMessage = "❌ Rental not found.";
+                showSuccess = false;
+            }
+        }
+        catch (Exception ex)
+        {
+            errorMessage = $"❌ Error updating rental: {ex.Message}";
+            showSuccess = false;
         }
     }
+
 
     private void GoBack()
     {

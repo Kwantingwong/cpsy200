@@ -59,6 +59,11 @@
 {
     <p class="text-success">✅ Customer updated!</p>
 }
+@if (!string.IsNullOrEmpty(errorMessage))
+{
+    <p class="text-danger">@errorMessage</p>
+}
+
 
 @code {
     [Parameter]
@@ -73,6 +78,7 @@
     private int PersonalDiscount;
     private string Notes;
     private bool showSuccess = false;
+    private string errorMessage;
 
     [Inject] private NavigationManager NavigationManager { get; set; }
 
@@ -99,22 +105,56 @@
 
     private void SaveChanges()
     {
-        var customer = CustomerManager.Customers.FirstOrDefault(c => c.CustomerID == CustomerID);
-
-        if (customer != null)
+        try
         {
-            customer.FirstName = FirstName;
-            customer.LastName = LastName;
-            customer.Phone = Phone;
-            customer.Email = Email;
-            customer.Status = Status;
-            customer.PersonalDiscount = PersonalDiscount;
-            customer.Notes = Notes;
+            // Validation
+            if (string.IsNullOrWhiteSpace(FirstName) || !FirstName.All(char.IsLetter))
+                throw new Exception("First Name is required and must contain only letters.");
 
-            CustomerManager.SaveCustomers();
-            showSuccess = true;
+            if (string.IsNullOrWhiteSpace(LastName) || !LastName.All(char.IsLetter))
+                throw new Exception("Last Name is required and must contain only letters.");
+
+            if (string.IsNullOrWhiteSpace(Phone) || !System.Text.RegularExpressions.Regex.IsMatch(Phone, @"^\d{10}$"))
+                throw new Exception("Phone must be a 10-digit number.");
+
+            if (string.IsNullOrWhiteSpace(Email) || !System.Text.RegularExpressions.Regex.IsMatch(Email, @"^[^@\s]+@[^@\s]+\.[^@\s]+$"))
+                throw new Exception("Please enter a valid email address.");
+
+            if (Status != "Active" && Status != "Banned")
+                throw new Exception("Status must be either 'Active' or 'Banned'.");
+
+            if (PersonalDiscount < 0 || PersonalDiscount > 100)
+                throw new Exception("Personal Discount must be between 0 and 100.");
+
+            // Update if all is valid
+            var customer = CustomerManager.Customers.FirstOrDefault(c => c.CustomerID == CustomerID);
+
+            if (customer != null)
+            {
+                customer.FirstName = FirstName;
+                customer.LastName = LastName;
+                customer.Phone = Phone;
+                customer.Email = Email;
+                customer.Status = Status;
+                customer.PersonalDiscount = PersonalDiscount;
+                customer.Notes = Notes;
+
+                CustomerManager.SaveCustomers();
+                showSuccess = true;
+                errorMessage = null;
+            }
+            else
+            {
+                throw new Exception("Customer not found.");
+            }
+        }
+        catch (Exception ex)
+        {
+            showSuccess = false;
+            errorMessage = $"❌ {ex.Message}";
         }
     }
+
 
     private void GoBack()
     {

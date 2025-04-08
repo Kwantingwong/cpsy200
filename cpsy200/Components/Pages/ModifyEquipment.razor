@@ -43,6 +43,10 @@
         <p class="text-success">✅ Equipment saved!</p>
 }
 
+@if (!string.IsNullOrEmpty(errorMessage))
+{
+    <p class="text-danger">@errorMessage</p>
+}
 @code {
     [Parameter]
     public int EquipmentID { get; set; }
@@ -52,6 +56,7 @@
     private string Description;
     private decimal DailyRentalCost;
     private string Notes;
+    private string errorMessage;
 
     private bool showSuccess = false;
 
@@ -78,25 +83,35 @@
 
     private void SaveChanges()
     {
-        var equipment = EquipmentManager.Equipments.FirstOrDefault(e => e.EquipmentID == EquipmentID);
-
-        if (equipment != null)
+        try
         {
-            equipment.EquipmentName = EquipmentName;
-            equipment.Description = Description;
-            equipment.DailyRentalCost = DailyRentalCost;
-            equipment.Notes = Notes;
+            var equipment = EquipmentManager.Equipments.FirstOrDefault(e => e.EquipmentID == EquipmentID);
 
-            // Optionally re-save to file here
-            EquipmentManager.SaveEquipments();
-            showSuccess = true;
+            if (equipment != null)
+            {
+                equipment.EquipmentName = EquipmentName;
+                equipment.Description = Description;
+                equipment.DailyRentalCost = DailyRentalCost;
+                equipment.Notes = Notes;
+
+                // Save to file
+                EquipmentManager.SaveEquipments();
+                showSuccess = true;
+                errorMessage = string.Empty;
+            }
+            else
+            {
+                errorMessage = "❌ Equipment not found.";
+                showSuccess = false;
+            }
+        }
+        catch (Exception ex)
+        {
+            errorMessage = $"❌ Error saving equipment: {ex.Message}";
+            showSuccess = false;
         }
     }
 
-    private void GoBack()
-    {
-        NavigationManager.NavigateTo("/");
-    }
 
 
 }

@@ -59,6 +59,11 @@
 {
     <p class="text-success">✅ Customer saved!</p>
 }
+@if (!string.IsNullOrEmpty(errorMessage))
+{
+    <p class="text-danger">@errorMessage</p>
+}
+
 
 @code {
     private int CustomerID = new Random().Next(2000, 9999);
@@ -71,6 +76,7 @@
     private string Notes;
 
     private bool showSuccess = false;
+    private string errorMessage;
 
     [Inject] private NavigationManager NavigationManager { get; set; }
 
@@ -81,19 +87,40 @@
 
     private void SaveCustomer()
     {
-        var line = $"{CustomerID},{FirstName},{LastName},{Phone},{Email},{Status},{PersonalDiscount},{Notes}";
-        var customer = new Customer(line);
-        CustomerManager.AddCustomer(customer);
+        try
+        {
+            // Check for null or empty fields
+            if (string.IsNullOrWhiteSpace(FirstName) ||
+                string.IsNullOrWhiteSpace(LastName) ||
+                string.IsNullOrWhiteSpace(Phone) ||
+                string.IsNullOrWhiteSpace(Email) ||
+                string.IsNullOrWhiteSpace(Status))
+            {
+                throw new Exception("All fields except Notes and ID must be filled.");
+            }
 
-        // Reset form after saving customer
-        CustomerID = new Random().Next(2000, 9999);
-        FirstName = "";
-        LastName = "";
-        Phone = "";
-        Email = "";
-        Status = "Active";
-        PersonalDiscount = 0;
-        Notes = "";
-        showSuccess = true;
+            // Build customer line and add to manager
+            var line = $"{CustomerID},{FirstName},{LastName},{Phone},{Email},{Status},{PersonalDiscount},{Notes}";
+            var customer = new Customer(line);
+            CustomerManager.AddCustomer(customer);
+
+            // Reset form
+            CustomerID = new Random().Next(2000, 9999);
+            FirstName = "";
+            LastName = "";
+            Phone = "";
+            Email = "";
+            Status = "Active";
+            PersonalDiscount = 0;
+            Notes = "";
+            showSuccess = true;
+            errorMessage = null;
+        }
+        catch (Exception ex)
+        {
+            errorMessage = $"❌ Error: {ex.Message}";
+            showSuccess = false;
+        }
     }
+
 }

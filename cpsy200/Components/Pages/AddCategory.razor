@@ -41,12 +41,19 @@
     <p class="text-success">✅ Category added!</p>
 }
 
+@if (!string.IsNullOrEmpty(errorMessage))
+{
+    <p class="text-danger">@errorMessage</p>
+}
+
+
 @code {
     private string CategoryIDText = new Random().Next(1000, 9999).ToString();  // Generate random ID
     private string CategoryName;
     private string CategoryDescription;
     private string Notes;
     private bool showSuccess = false;
+    private string errorMessage;
 
     [Inject] private NavigationManager NavigationManager { get; set; }
 
@@ -57,23 +64,38 @@
 
     private void SubmitCategory()
     {
-        // Simulate adding the category (e.g., add to database or list)
-        var category = new Category
+        try
+        {
+            // Validate required fields
+            if (string.IsNullOrWhiteSpace(CategoryName) || string.IsNullOrWhiteSpace(CategoryDescription))
             {
-                CategoryID = int.Parse(CategoryIDText),
-                CategoryName = CategoryName,
-                CategoryDescription = CategoryDescription,
-                Notes = Notes
-            };
+                throw new Exception("Name and Description cannot be empty.");
+            }
 
-        CategoryManager.AddCategory(category);  
+            // Create and add category
+            var category = new Category
+                {
+                    CategoryID = int.Parse(CategoryIDText),
+                    CategoryName = CategoryName,
+                    CategoryDescription = CategoryDescription,
+                    Notes = Notes
+                };
 
-        // Reset form after submission
-        GenerateNextCategoryID();
-        CategoryName = "";
-        CategoryDescription = "";
-        Notes = "";
-        showSuccess = true;
+            CategoryManager.AddCategory(category);
+
+            // Reset form
+            GenerateNextCategoryID();
+            CategoryName = "";
+            CategoryDescription = "";
+            Notes = "";
+            showSuccess = true;
+            errorMessage = null;
+        }
+        catch (Exception ex)
+        {
+            errorMessage = $"❌ Error: {ex.Message}";
+            showSuccess = false;
+        }
     }
 
     private void GenerateNextCategoryID()

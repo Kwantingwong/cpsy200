@@ -65,6 +65,10 @@
 {
     <p class="text-success">✅ Equipment saved!</p>
 }
+@if (!string.IsNullOrEmpty(errorMessage))
+{
+    <p class="text-danger">@errorMessage</p>
+}
 
 @code {
     private int EquipmentID = new Random().Next(1000, 9999);
@@ -77,6 +81,7 @@
     private string Location = "Storage";
     private string Notes;
     private bool showSuccess = false;
+    private string errorMessage;
 
     private List<Category> CategoryList = new List<Category>();
 
@@ -98,15 +103,32 @@
 
     private void SaveEquipment()
     {
-        var newEquipment = new Equipment($"{EquipmentID},{SelectedCategoryID},{EquipmentName},{Description},{Status},{Condition},{Location},{DailyRentalCost},{Notes}");
-        EquipmentManager.AddEquipment(newEquipment);
+        try
+        {
+            // Validate required fields
+            if (string.IsNullOrWhiteSpace(EquipmentName) ||
+                string.IsNullOrWhiteSpace(Description) ||
+                DailyRentalCost <= 0)
+            {
+                throw new Exception("Equipment Name, Description, and Daily Rental Cost must be filled in correctly.");
+            }
 
-        // Reset the form or show success message
-        EquipmentID = new Random().Next(1000, 9999);
-        EquipmentName = "";
-        Description = "";
-        DailyRentalCost = 0;
-        Notes = "";
-        showSuccess = true;
+            var newEquipment = new Equipment($"{EquipmentID},{SelectedCategoryID},{EquipmentName},{Description},{Status},{Condition},{Location},{DailyRentalCost},{Notes}");
+            EquipmentManager.AddEquipment(newEquipment);
+
+            // Reset form
+            EquipmentID = new Random().Next(1000, 9999);
+            EquipmentName = "";
+            Description = "";
+            DailyRentalCost = 0;
+            Notes = "";
+            showSuccess = true;
+            errorMessage = null;
+        }
+        catch (Exception ex)
+        {
+            errorMessage = $"❌ Error: {ex.Message}";
+            showSuccess = false;
+        }
     }
 }

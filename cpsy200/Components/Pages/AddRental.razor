@@ -106,6 +106,7 @@ Add more notes if needed:
     <p class="text-danger">@errorMessage</p>
 }
 
+
 @code {
     private string RentalIDText;
     private int EquipmentID;
@@ -175,77 +176,88 @@ Add more notes if needed:
 
     private void SubmitRental()
     {
-
-        var existingRental = cpsy200.Data.RentalManager.GetRentals()
-            .FirstOrDefault(r => r.EquipmentID == EquipmentID && r.Status == "Rented");
-      
-        if (existingRental != null)
+        try
         {
-            var matchedEquipment = EquipmentManager.Equipments.FirstOrDefault(e => e.EquipmentID == EquipmentID);
-            string equipmentName = matchedEquipment?.EquipmentName ?? "Unknown";
+            // Validate essential fields
+            if (EquipmentID == 0 || CustomerID == 0)
+                throw new Exception("Please select both Equipment and Customer.");
 
-            errorMessage = $"⚠️ Equipment '{equipmentName}' (ID: {EquipmentID}) is already rented (Rental ID: {existingRental.RentalID}) and must be returned before renting again.";
+            if (RentalDate > ReturnDate)
+                throw new Exception("Return Date cannot be earlier than Rental Date.");
+
+            if (CostOfRental <= 0)
+                throw new Exception("Cost of Rental must be a positive number.");
+
+            // Check if equipment is already rented
+            var existingRental = cpsy200.Data.RentalManager.GetRentals()
+                .FirstOrDefault(r => r.EquipmentID == EquipmentID && r.Status == "Rented");
+
+            if (existingRental != null)
+            {
+                var matchedEquipment = EquipmentManager.Equipments.FirstOrDefault(e => e.EquipmentID == EquipmentID);
+                string equipmentName = matchedEquipment?.EquipmentName ?? "Unknown";
+
+                throw new Exception($"⚠️ Equipment '{equipmentName}' (ID: {EquipmentID}) is already rented (Rental ID: {existingRental.RentalID}) and must be returned before renting again.");
+            }
+
+            var rental = new cpsy200.Data.Rental
+                {
+                    RentalID = int.Parse(RentalIDText),
+                    EquipmentID = EquipmentID,
+                    CustomerID = CustomerID,
+                    RentalDate = RentalDate,
+                    ReturnDate = ReturnDate,
+                    CostOfRental = CostOfRental,
+                    TotalCost = CostOfRental,
+                    Status = Status,
+                    Notes = Notes
+                };
+
+            cpsy200.Data.RentalManager.AddRental(rental);
+
+            // Update Equipment Info
+            var equipment = EquipmentManager.Equipments.FirstOrDefault(eq => eq.EquipmentID == EquipmentID);
+            if (equipment != null)
+            {
+                if (Status == "Rented")
+                {
+                    equipment.Condition = "Used";
+                    equipment.Location = "Rented Out";
+                    equipment.Status = "Rented";
+                }
+                else if (Status == "Returned")
+                {
+                    equipment.Status = "Available";
+                    equipment.Location = "Storage";
+                }
+
+                EquipmentManager.SaveEquipments();
+            }
+
+            // Clear form
+            showSuccess = true;
+            errorMessage = null;
+
+            GenerateRandomRentalID();
+            EquipmentID = 0;
+            EquipmentIDText = string.Empty;
+            EquipmentSearchKeyword = string.Empty;
+
+            CustomerID = 0;
+            CustomerIDText = string.Empty;
+            CustomerSearchKeyword = string.Empty;
+
+            RentalDate = DateTime.Today;
+            ReturnDate = DateTime.Today;
+            CostOfRental = 0;
+            Status = "Rented";
+            Notes = string.Empty;
+        }
+        catch (Exception ex)
+        {
+            errorMessage = ex.Message;
             showSuccess = false;
-            return;
         }
-
-        else
-        {
-            errorMessage = string.Empty;
-        }
-
-        var rental = new cpsy200.Data.Rental
-            {
-                RentalID = int.Parse(RentalIDText),
-                EquipmentID = EquipmentID,
-                CustomerID = CustomerID,
-                RentalDate = RentalDate,
-                ReturnDate = ReturnDate,
-                CostOfRental = CostOfRental,
-                TotalCost = CostOfRental,
-                Status = Status,
-                Notes = Notes
-            };
-
-        // Save rental
-        cpsy200.Data.RentalManager.AddRental(rental);
-
-        // Update Equipment Info and Save Equipment CSV
-        var equipment = EquipmentManager.Equipments.FirstOrDefault(eq => eq.EquipmentID == EquipmentID);
-        if (equipment != null)
-        {
-            if (Status == "Rented")
-            {
-                equipment.Condition = "Used";
-                equipment.Location = "Rented Out";
-                equipment.Status = "Rented";
-            }
-            else if (Status == "Returned")
-            {
-                equipment.Status = "Available";
-                equipment.Location = "Storage";
-            }
-
-            EquipmentManager.SaveEquipments();
-        }
-
-        showSuccess = true;
-
-        // Clear form
-        GenerateRandomRentalID();
-        EquipmentID = 0;
-        EquipmentIDText = string.Empty;
-        EquipmentSearchKeyword = string.Empty;
-
-        CustomerID = 0;
-        CustomerIDText = string.Empty;
-        CustomerSearchKeyword = string.Empty;
-
-        RentalDate = DateTime.Today;
-        ReturnDate = DateTime.Today;
-        CostOfRental = 0;
-        Status = "Rented";
-        Notes = string.Empty;
     }
 
     private void GenerateRandomRentalID()
