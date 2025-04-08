@@ -1,23 +1,23 @@
 {
   "Files": [
     {
-      "Id": "C:\\Joy_Sem2\\software_analysis\\final_proj\\github\\cpsy200\\cpsy200\\obj\\Debug\\net9.0-android\\scopedcss\\bundle\\cpsy200.styles.css",
+      "Id": "C:\\Users\\karin\\source\\repos\\cpsy200\\cpsy200\\obj\\Debug\\net9.0-android\\scopedcss\\bundle\\cpsy200.styles.css",
       "PackagePath": "staticwebassets\\cpsy200.styles.css"
     },
     {
-      "Id": "C:\\Joy_Sem2\\software_analysis\\final_proj\\github\\cpsy200\\cpsy200\\wwwroot\\css\\app.css",
+      "Id": "C:\\Users\\karin\\source\\repos\\cpsy200\\cpsy200\\wwwroot\\css\\app.css",
       "PackagePath": "staticwebassets\\css\\app.css"
     },
     {
-      "Id": "C:\\Joy_Sem2\\software_analysis\\final_proj\\github\\cpsy200\\cpsy200\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
+      "Id": "C:\\Users\\karin\\source\\repos\\cpsy200\\cpsy200\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
       "PackagePath": "staticwebassets\\css\\bootstrap\\bootstrap.min.css"
     },
     {
-      "Id": "C:\\Joy_Sem2\\software_analysis\\final_proj\\github\\cpsy200\\cpsy200\\wwwroot\\css\\bootstrap\\bootstrap.min.css.map",
+      "Id": "C:\\Users\\karin\\source\\repos\\cpsy200\\cpsy200\\wwwroot\\css\\bootstrap\\bootstrap.min.css.map",
       "PackagePath": "staticwebassets\\css\\bootstrap\\bootstrap.min.css.map"
     },
     {
-      "Id": "C:\\Joy_Sem2\\software_analysis\\final_proj\\github\\cpsy200\\cpsy200\\wwwroot\\index.html",
+      "Id": "C:\\Users\\karin\\source\\repos\\cpsy200\\cpsy200\\wwwroot\\index.html",
       "PackagePath": "staticwebassets\\index.html"
     },
     {

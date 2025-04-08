@@ -1,3 +1,4 @@
+runtimes\win-x64\native\WebView2Loader.dll
 Components\Layout\MainLayout.razor.css
 Components\Layout\NavMenu.razor.css
 wwwroot\index.html.gz
@@ -76,4 +77,3 @@ wwwroot\css\app.css
 wwwroot\css\bootstrap\bootstrap.min.css
 wwwroot\css\bootstrap\bootstrap.min.css.map
 wwwroot\index.html
-runtimes\win-x64\native\WebView2Loader.dll

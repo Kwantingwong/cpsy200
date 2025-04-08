@@ -9,7 +9,7 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = cpsy200
 build_property.RootNamespace = cpsy200
-build_property.ProjectDir = C:\Joy_Sem2\software_analysis\final_proj\github\cpsy200\cpsy200\
+build_property.ProjectDir = C:\Users\karin\source\repos\cpsy200\cpsy200\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.CsWinRTAotOptimizerEnabled = true
@@ -23,138 +23,138 @@ build_property.CsWinRTUseWindowsUIXamlProjections = false
 build_property.RazorLangVersion = 9.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Joy_Sem2\software_analysis\final_proj\github\cpsy200\cpsy200
+build_property.MSBuildProjectDirectory = C:\Users\karin\source\repos\cpsy200\cpsy200
 build_property._RazorSourceGeneratorDebug = 
 build_property.EffectiveAnalysisLevelStyle = 9.0
 build_property.EnableCodeStyleSeverity = 
 
-[C:/Joy_Sem2/software_analysis/final_proj/github/cpsy200/cpsy200/App.xaml]
+[C:/Users/karin/source/repos/cpsy200/cpsy200/App.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = cpsy200.App.xaml
 build_metadata.AdditionalFiles.TargetPath = App.xaml
 build_metadata.AdditionalFiles.RelativePath = App.xaml
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Joy_Sem2/software_analysis/final_proj/github/cpsy200/cpsy200/MainPage.xaml]
+[C:/Users/karin/source/repos/cpsy200/cpsy200/MainPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = cpsy200.MainPage.xaml
 build_metadata.AdditionalFiles.TargetPath = MainPage.xaml
 build_metadata.AdditionalFiles.RelativePath = MainPage.xaml
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Joy_Sem2/software_analysis/final_proj/github/cpsy200/cpsy200/Components/Pages/AddCategory.razor]
+[C:/Users/karin/source/repos/cpsy200/cpsy200/Components/Pages/AddCategory.razor]
 build_metadata.AdditionalFiles.GenKind = 
 build_metadata.AdditionalFiles.ManifestResourceName = 
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xBZGRDYXRlZ29yeS5yYXpvcg==
 build_metadata.AdditionalFiles.RelativePath = 
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Joy_Sem2/software_analysis/final_proj/github/cpsy200/cpsy200/Components/Pages/AddCustomer.razor]
+[C:/Users/karin/source/repos/cpsy200/cpsy200/Components/Pages/AddCustomer.razor]
 build_metadata.AdditionalFiles.GenKind = 
 build_metadata.AdditionalFiles.ManifestResourceName = 
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xBZGRDdXN0b21lci5yYXpvcg==
 build_metadata.AdditionalFiles.RelativePath = 
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Joy_Sem2/software_analysis/final_proj/github/cpsy200/cpsy200/Components/Pages/AddEquipment.razor]
+[C:/Users/karin/source/repos/cpsy200/cpsy200/Components/Pages/AddEquipment.razor]
 build_metadata.AdditionalFiles.GenKind = 
 build_metadata.AdditionalFiles.ManifestResourceName = 
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xBZGRFcXVpcG1lbnQucmF6b3I=
 build_metadata.AdditionalFiles.RelativePath = 
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Joy_Sem2/software_analysis/final_proj/github/cpsy200/cpsy200/Components/Pages/AddRental.razor]
+[C:/Users/karin/source/repos/cpsy200/cpsy200/Components/Pages/AddRental.razor]
 build_metadata.AdditionalFiles.GenKind = 
 build_metadata.AdditionalFiles.ManifestResourceName = 
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xBZGRSZW50YWwucmF6b3I=
 build_metadata.AdditionalFiles.RelativePath = 
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Joy_Sem2/software_analysis/final_proj/github/cpsy200/cpsy200/Components/Pages/Home.razor]
+[C:/Users/karin/source/repos/cpsy200/cpsy200/Components/Pages/Home.razor]
 build_metadata.AdditionalFiles.GenKind = 
 build_metadata.AdditionalFiles.ManifestResourceName = 
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xIb21lLnJhem9y
 build_metadata.AdditionalFiles.RelativePath = 
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Joy_Sem2/software_analysis/final_proj/github/cpsy200/cpsy200/Components/Pages/ModifyCustomer.razor]
+[C:/Users/karin/source/repos/cpsy200/cpsy200/Components/Pages/ModifyCustomer.razor]
 build_metadata.AdditionalFiles.GenKind = 
 build_metadata.AdditionalFiles.ManifestResourceName = 
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xNb2RpZnlDdXN0b21lci5yYXpvcg==
 build_metadata.AdditionalFiles.RelativePath = 
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Joy_Sem2/software_analysis/final_proj/github/cpsy200/cpsy200/Components/Pages/ModifyEquipment.razor]
+[C:/Users/karin/source/repos/cpsy200/cpsy200/Components/Pages/ModifyEquipment.razor]
 build_metadata.AdditionalFiles.GenKind = 
 build_metadata.AdditionalFiles.ManifestResourceName = 
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xNb2RpZnlFcXVpcG1lbnQucmF6b3I=
 build_metadata.AdditionalFiles.RelativePath = 
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Joy_Sem2/software_analysis/final_proj/github/cpsy200/cpsy200/Components/Pages/ModifyRental.razor]
+[C:/Users/karin/source/repos/cpsy200/cpsy200/Components/Pages/ModifyRental.razor]
 build_metadata.AdditionalFiles.GenKind = 
 build_metadata.AdditionalFiles.ManifestResourceName = 
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xNb2RpZnlSZW50YWwucmF6b3I=
 build_metadata.AdditionalFiles.RelativePath = 
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Joy_Sem2/software_analysis/final_proj/github/cpsy200/cpsy200/Components/Pages/RemoveEquipment.razor]
+[C:/Users/karin/source/repos/cpsy200/cpsy200/Components/Pages/RemoveEquipment.razor]
 build_metadata.AdditionalFiles.GenKind = 
 build_metadata.AdditionalFiles.ManifestResourceName = 
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xSZW1vdmVFcXVpcG1lbnQucmF6b3I=
 build_metadata.AdditionalFiles.RelativePath = 
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Joy_Sem2/software_analysis/final_proj/github/cpsy200/cpsy200/Components/Pages/Report.razor]
+[C:/Users/karin/source/repos/cpsy200/cpsy200/Components/Pages/Report.razor]
 build_metadata.AdditionalFiles.GenKind = 
 build_metadata.AdditionalFiles.ManifestResourceName = 
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xSZXBvcnQucmF6b3I=
 build_metadata.AdditionalFiles.RelativePath = 
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Joy_Sem2/software_analysis/final_proj/github/cpsy200/cpsy200/Components/Pages/SearchCustomer.razor]
+[C:/Users/karin/source/repos/cpsy200/cpsy200/Components/Pages/SearchCustomer.razor]
 build_metadata.AdditionalFiles.GenKind = 
 build_metadata.AdditionalFiles.ManifestResourceName = 
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xTZWFyY2hDdXN0b21lci5yYXpvcg==
 build_metadata.AdditionalFiles.RelativePath = 
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Joy_Sem2/software_analysis/final_proj/github/cpsy200/cpsy200/Components/Pages/SearchEquipment.razor]
+[C:/Users/karin/source/repos/cpsy200/cpsy200/Components/Pages/SearchEquipment.razor]
 build_metadata.AdditionalFiles.GenKind = 
 build_metadata.AdditionalFiles.ManifestResourceName = 
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xTZWFyY2hFcXVpcG1lbnQucmF6b3I=
 build_metadata.AdditionalFiles.RelativePath = 
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Joy_Sem2/software_analysis/final_proj/github/cpsy200/cpsy200/Components/Pages/SearchRental.razor]
+[C:/Users/karin/source/repos/cpsy200/cpsy200/Components/Pages/SearchRental.razor]
 build_metadata.AdditionalFiles.GenKind = 
 build_metadata.AdditionalFiles.ManifestResourceName = 
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xTZWFyY2hSZW50YWwucmF6b3I=
 build_metadata.AdditionalFiles.RelativePath = 
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Joy_Sem2/software_analysis/final_proj/github/cpsy200/cpsy200/Components/Routes.razor]
+[C:/Users/karin/source/repos/cpsy200/cpsy200/Components/Routes.razor]
 build_metadata.AdditionalFiles.GenKind = 
 build_metadata.AdditionalFiles.ManifestResourceName = 
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xSb3V0ZXMucmF6b3I=
 build_metadata.AdditionalFiles.RelativePath = 
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Joy_Sem2/software_analysis/final_proj/github/cpsy200/cpsy200/Components/_Imports.razor]
+[C:/Users/karin/source/repos/cpsy200/cpsy200/Components/_Imports.razor]
 build_metadata.AdditionalFiles.GenKind = 
 build_metadata.AdditionalFiles.ManifestResourceName = 
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xfSW1wb3J0cy5yYXpvcg==
 build_metadata.AdditionalFiles.RelativePath = 
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Joy_Sem2/software_analysis/final_proj/github/cpsy200/cpsy200/Components/Layout/MainLayout.razor]
+[C:/Users/karin/source/repos/cpsy200/cpsy200/Components/Layout/MainLayout.razor]
 build_metadata.AdditionalFiles.GenKind = 
 build_metadata.AdditionalFiles.ManifestResourceName = 
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xMYXlvdXRcTWFpbkxheW91dC5yYXpvcg==
 build_metadata.AdditionalFiles.RelativePath = 
 build_metadata.AdditionalFiles.CssScope = b-wer9ljib6c
 
-[C:/Joy_Sem2/software_analysis/final_proj/github/cpsy200/cpsy200/Components/Layout/NavMenu.razor]
+[C:/Users/karin/source/repos/cpsy200/cpsy200/Components/Layout/NavMenu.razor]
 build_metadata.AdditionalFiles.GenKind = 
 build_metadata.AdditionalFiles.ManifestResourceName = 
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xMYXlvdXRcTmF2TWVudS5yYXpvcg==
